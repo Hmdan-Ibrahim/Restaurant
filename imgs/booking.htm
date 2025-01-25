@@ -1,0 +1,900 @@
+<!doctype html>
+<html dir="rtl" lang="ar">
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),this._loadEverythingNow()}async _loadEverythingNow(){this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{var n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){const n=e[t];Object.defineProperty(e,t,{get:n||function(){},set:n=>{e["rocket"+t]=n}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e?"rocket-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mouseover","touchmove","touchstart","wheel"]);e._delayEventListeners(),e._delayJQueryReady(e),e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	
+	<link rel="icon" href="https://deyafabusiness.com/wp-content/uploads/2020/06/fav.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="https://deyafabusiness.com/wp-content/uploads/2020/06/fav.png" type="image/x-icon" />
+
+	    <style>
+        #wpadminbar #wp-admin-bar-vtrts_free_top_button .ab-icon:before {
+            content: "\f185";
+            color: #1DAE22;
+            top: 3px;
+        }
+    </style>
+    <meta name='robots' content='max-image-preview:large' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v15.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه - ضيافة بزنس</title><style id="rocket-critical-css">:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%}header,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:right;background-color:#fff}h2,h3{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}ul{margin-top:0;margin-bottom:1rem}ul ul{margin-bottom:0}a{color:#007bff;text-decoration:none;background-color:transparent}a:not([href]):not([tabindex]){color:inherit;text-decoration:none}img{vertical-align:middle;border-style:none}label{display:inline-block;margin-bottom:.5rem}input{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}input{overflow:visible}[type=submit]{-webkit-appearance:button}[type=submit]::-moz-focus-inner{padding:0;border-style:none}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}h2,h3{margin-bottom:.5rem;font-family:inherit;font-weight:500;line-height:1.2;color:inherit}h2{font-size:2rem}h3{font-size:1.75rem}.img-fluid{max-width:100%;height:auto}.container{width:100%;padding-left:15px;padding-right:15px;margin-left:auto;margin-right:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.container-fluid{width:100%;padding-left:15px;padding-right:15px;margin-left:auto;margin-right:auto}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-15px;margin-right:-15px}.col-lg-4,.col-lg-8,.col-md-12{position:relative;width:100%;padding-left:15px;padding-right:15px}@media (min-width:768px){.col-md-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}@media (min-width:992px){.col-lg-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-lg-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}}.d-flex{display:-ms-flexbox!important;display:flex!important}.justify-content-between{-ms-flex-pack:justify!important;justify-content:space-between!important}.align-items-end{-ms-flex-align:end!important;align-items:flex-end!important}.mb-0{margin-bottom:0!important}.fab,.fas{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}.fa-angle-right:before{content:"\f105"}.fa-facebook-messenger:before{content:"\f39f"}@font-face{font-family:"Font Awesome 5 Brands";font-style:normal;font-weight:normal;font-display:swap;src:url(/wp-content/themes/deyafa/css/../fonts/fa-brands-400.eot);src:url(/wp-content/themes/deyafa/css/../fonts/fa-brands-400.eot?#iefix) format("embedded-opentype"),url(/wp-content/themes/deyafa/css/../fonts/fa-brands-400.woff2) format("woff2"),url(/wp-content/themes/deyafa/css/../fonts/fa-brands-400.woff) format("woff"),url(/wp-content/themes/deyafa/css/../fonts/fa-brands-400.ttf) format("truetype"),url(/wp-content/themes/deyafa/css/../fonts/fa-brands-400.svg#fontawesome) format("svg")}.fab{font-family:"Font Awesome 5 Brands"}@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:400;font-display:swap;src:url(/wp-content/themes/deyafa/css/../fonts/fa-regular-400.eot);src:url(/wp-content/themes/deyafa/css/../fonts/fa-regular-400.eot?#iefix) format("embedded-opentype"),url(/wp-content/themes/deyafa/css/../fonts/fa-regular-400.woff2) format("woff2"),url(/wp-content/themes/deyafa/css/../fonts/fa-regular-400.woff) format("woff"),url(/wp-content/themes/deyafa/css/../fonts/fa-regular-400.ttf) format("truetype"),url(/wp-content/themes/deyafa/css/../fonts/fa-regular-400.svg#fontawesome) format("svg")}@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:swap;src:url(/wp-content/themes/deyafa/css/../fonts/fa-solid-900.eot);src:url(/wp-content/themes/deyafa/css/../fonts/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(/wp-content/themes/deyafa/css/../fonts/fa-solid-900.woff2) format("woff2"),url(/wp-content/themes/deyafa/css/../fonts/fa-solid-900.woff) format("woff"),url(/wp-content/themes/deyafa/css/../fonts/fa-solid-900.ttf) format("truetype"),url(/wp-content/themes/deyafa/css/../fonts/fa-solid-900.svg#fontawesome) format("svg")}.fas{font-family:"Font Awesome 5 Free"}.fas{font-weight:900}@font-face{font-family:mainfont;src:url(/wp-content/themes/deyafa/fonts/Cairo-Regular.ttf);font-display:swap}*{font-family:mainfont;color:#707070}body{background:#F6F6F6}.font-bolder{font-weight:bolder;font-size:18px}h2,h3{color:#822F2B}h2{font-size:24px}p{margin:0;padding:0}p{font-size:18px;font-weight:800}a,a:visited{color:blue;outline:none}a,a:visited,input{outline:none}p,ul,li,span{font-weight:300}h3{margin-bottom:50px}header{position:fixed;z-index:100;left:0;top:0;width:100%;background:#F6F6F6;padding:15px 0;-webkit-box-shadow:0 2px 1px rgba(0,0,0,.1);box-shadow:0 2px 1px rgba(0,0,0,.1)}header div.container-fluid{padding-right:70px;padding-left:70px}header a.logo img{width:200px}header ul.menue{list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}header ul.menue>li{position:relative}header ul.menue>li ul{position:absolute;background:#822F2B;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);top:60px;display:block;width:900px;padding:15px;border-radius:5px;list-style:none;-webkit-box-shadow:0 2px 4px rgba(0,0,0,.3);box-shadow:0 2px 4px rgba(0,0,0,.3);opacity:0;visibility:hidden}header ul.menue>li ul:after{content:"";display:block;position:absolute;width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:8px solid #822F2B;top:-8px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}header ul.menue>li ul li{width:33.333%;float:right}header ul.menue>li ul li a{color:#fff;text-decoration:none}header ul.menue>li ul li a:after{display:none}header ul.menue>li ul li:not(:last-child){margin-bottom:5px}header ul.menue>li>a{text-transform:uppercase;font-family:mainfont;color:#707070;position:relative;text-decoration:none}header ul.menue>li>a:after{content:"";display:block;position:absolute;width:0;height:2px;background:#822F2B;bottom:-3px;right:0;font-size:16px}header ul.menue>li:not(:last-child){margin-left:15px}header ul.mobile-menu,header a.mobile-button{display:none}@media (max-width:1200px){header a.logo img{width:180px}header ul>li>a{font-size:14px}}@media (max-width:991px){a.mobile-button{display:block!important;width:30px;height:18px;position:relative}a.mobile-button span{display:block;position:absolute;width:100%;height:3px;background:#71993F}a.mobile-button span:first-child{top:0;left:0}a.mobile-button span:nth-child(2){top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}a.mobile-button span:last-child{bottom:0;left:0}ul.menue{display:none!important}ul.mobile-menu{position:fixed;display:block!important;left:0;top:100px;background:#71993F;height:100%;padding:15px 20px;list-style:none;left:-300px;width:300px;-webkit-box-shadow:0 2px 4px rgba(0,0,0,.3);box-shadow:0 2px 4px rgba(0,0,0,.3)}ul.mobile-menu li:not(:last-child){margin-bottom:5px}ul.mobile-menu li a{color:#fff;font-family:mainfont;display:block;font-size:16px;text-transform:uppercase;padding:5px 10px;border-radius:5px;overflow:hidden;text-decoration:none}ul.mobile-menu li ul{background:#822F2B;margin-top:5px;padding:5px;border-radius:5px;display:none;list-style:none}ul.mobile-menu li ul li a{font-size:13px}h3{margin-bottom:30px}p{font-size:16px}}@media (max-width:768px){.side-bar{margin-top:40px}header div.container-fluid{padding-left:10px;padding-right:10px}}@media (max-width:557px){h2 span{font-size:23px}}.blog-details-area{padding:150px 0}.blog-details .thumb{position:relative}.blog-details .date{position:absolute;left:0;bottom:0;text-transform:uppercase;background:#71993F;color:#ffffff!important;padding:10px 20px;font-size:22px;border-radius:0 10px 0 0}.blog-details-heading{margin:30px 0 0}.blog-details-heading h3{margin-bottom:15px;font-size:26px;font-weight:600}.blog-details-heading ul{padding:0;margin:0;list-style-type:none}.blog-details-heading ul li{display:inline-block;margin-right:15px;color:#777;font-size:15px;font-weight:500}.blog-details-content h2{color:#707070}.blog-details-content p{margin-top:15px;font-size:16px;line-height:1.8;font-weight:400}.side-bar .widget-box{background:#fff;-webkit-box-shadow:7px 5px 30px rgba(72,73,121,.15);box-shadow:7px 5px 30px rgba(72,73,121,.15);padding:30px 25px;position:relative;border-radius:5px;margin-bottom:30px}.side-bar .widget-box .title{font-size:24px;font-weight:700;text-transform:capitalize;margin-bottom:35px;position:relative}.side-bar .widget-box ul{list-style-type:none;padding:0;margin:0}.side-bar .search-box form{position:relative}.side-bar .search-box form span.screen-reader-text{display:none}.side-bar .search-box form input[type="search"]{height:50px;font-size:16px;padding:10px 20px;border:1px solid #f3f5fe;outline:0;border-radius:5px;background:#f3f5fe;width:100%}.side-bar .search-box input[type="submit"]{position:absolute;left:0;top:0;height:100%;width:100px;border:none;background:#822F2B;color:#fff;outline:0!important}.side-bar .search-box label{margin:0;padding-right:0;width:100%}.side-bar .categories-box ul li:last-child a{margin-bottom:0}.side-bar .categories-box ul li a{position:relative;margin-bottom:10px;font-weight:600}.side-bar .categories-box ul li a i{display:none}.side-bar .tags-box .title{margin-bottom:27px}.side-bar .recent-post-box ul li{position:relative;overflow:hidden;margin-bottom:15px;padding-left:110px}.side-bar .recent-post-box ul li .recent-post-thumb{position:absolute;left:0;top:0;width:100px}.side-bar .recent-post-box ul li .recent-post-desc h3{font-size:15px;font-weight:600;line-height:23px}.messenger-link{display:inline-block;position:fixed;bottom:24px;right:24px;z-index:999;font-size:40px;color:#0078FF;width:60px;height:60px;line-height:60px;text-align:center;background:#fff;border-radius:50%;box-shadow:0 2px 4px rgba(0,0,0,.3);-webkit-box-shadow:0 2px 4px rgba(0,0,0,.3);-moz-box-shadow:0 2px 4px rgba(0,0,0,.3)}.messenger-link i{color:#0078FF}</style><link rel="preload" href="https://deyafabusiness.com/wp-content/cache/min/1/6c4c99f7317aee1ffa36c426c466e085.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" media="all" data-minify="1" />
+	<meta name="description" content="تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه تتطلب عملية تصميم ديكور مطعم الكثير من المجهود والتخطيط، والمعرفه أسس تصميم المطاعم الحديثه" />
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://deyafabusiness.com/2023/01/10/ديكور-مطعم-أسس-تصميم-المطاعم-والكافيه/" />
+	<meta property="og:locale" content="ar_AR" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه - ضيافة بزنس" />
+	<meta property="og:description" content="تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه تتطلب عملية تصميم ديكور مطعم الكثير من المجهود والتخطيط، والمعرفه أسس تصميم المطاعم الحديثه" />
+	<meta property="og:url" content="https://deyafabusiness.com/2023/01/10/ديكور-مطعم-أسس-تصميم-المطاعم-والكافيه/" />
+	<meta property="og:site_name" content="ضيافة بزنس" />
+	<meta property="article:publisher" content="https://www.facebook.com/ingaz99" />
+	<meta property="article:author" content="https://www.facebook.com/ingaz99" />
+	<meta property="article:published_time" content="2023-01-09T22:00:21+00:00" />
+	<meta property="article:modified_time" content="2023-01-17T06:29:10+00:00" />
+	<meta property="og:image" content="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg" />
+	<meta property="og:image:width" content="1024" />
+	<meta property="og:image:height" content="713" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@https://twitter.com/DeyafaBusiness" />
+	<meta name="twitter:site" content="@DeyafaBusiness" />
+	<meta name="twitter:label1" content="كُتب بواسطة">
+	<meta name="twitter:data1" content="admin">
+	<meta name="twitter:label2" content="وقت القراءة المُقدّر">
+	<meta name="twitter:data2" content="9 دقائق">
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="ضيافة بزنس &laquo; الخلاصة" href="https://deyafabusiness.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="ضيافة بزنس &laquo; خلاصة التعليقات" href="https://deyafabusiness.com/comments/feed/" />
+
+<!-- This site is optimized with the Schema Premium ver.1.2.1 - https://schema.press -->
+<script type="application/ld+json" class="schema-premium">{"@context":"https:\/\/schema.org\/","@type":"WPHeader","url":"https:\/\/deyafabusiness.com","headline":"أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه","description":"ضيافة بزنس متخصصون فى تأسيس مشروعات المطاعم والكافيهات بأنواعها ونعمل على توظيف خبراتنا المكتسبه على مدار سنوات طويله..."}</script><script type="application/ld+json" class="schema-premium">{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","@id":"https:\/\/deyafabusiness.com\/2023\/01\/10\/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87\/#breadcrumb","url":"https:\/\/deyafabusiness.com\/2023\/01\/10\/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87\/","name":"Breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/deyafabusiness.com#webpage","url":"https:\/\/deyafabusiness.com","name":"ضيافة"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https:\/\/deyafabusiness.com\/2023\/01\/10\/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87\/#webpage","url":"https:\/\/deyafabusiness.com\/2023\/01\/10\/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87\/","name":"أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه","image":"https:\/\/deyafabusiness.com\/wp-content\/uploads\/2020\/09\/525494_004.jpg"}}]}</script><script type="application/ld+json" class="schema-premium">{"@context":"https:\/\/schema.org\/","@type":"WPFooter","url":"https:\/\/deyafabusiness.com","headline":"أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه","description":"ضيافة بزنس متخصصون فى تأسيس مشروعات المطاعم والكافيهات بأنواعها ونعمل على توظيف خبراتنا المكتسبه على مدار سنوات طويله...","copyrightYear":"2023"}</script><!-- Schema Premium Plugin -->
+
+<link rel="alternate" type="application/rss+xml" title="ضيافة بزنس &laquo; أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه خلاصة التعليقات" href="https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/feed/" />
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+			var ajaxurl = 'https://deyafabusiness.com/wp-admin/admin-ajax.php';</script>
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v7.0.16 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-cfasync="false">
+	var mi_track_user      = true;
+	var mi_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-184630413-1';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-184630413-1', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('require', 'displayfeatures');
+		__gaTracker('send','pageview');
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+					})();
+		}
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+
+
+<link rel='preload'  href='//fonts.googleapis.com/css?family=Open+Sans&#038;ver=6.1.1' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" media='all' />
+
+
+
+
+
+
+
+
+<style id='site-reviews-inline-css'>
+.glsr-star-empty,.glsr-star-rating--stars[class*=" s"]>span{background-image:url(https://deyafabusiness.com/wp-content/plugins/site-reviews/assets/images/star-empty.svg)!important}.glsr-field-is-invalid .glsr-star-rating--stars[class*=" s"]>span{background-image:url(https://deyafabusiness.com/wp-content/plugins/site-reviews/assets/images/star-error.svg)!important}.glsr-star-half{background-image:url(https://deyafabusiness.com/wp-content/plugins/site-reviews/assets/images/star-half.svg)!important}.glsr-star-full,.glsr-star-rating--stars[class*=" s"]>span.gl-active,.glsr-star-rating--stars[class*=" s"]>span.gl-active.gl-selected{background-image:url(https://deyafabusiness.com/wp-content/plugins/site-reviews/assets/images/star-full.svg)!important}
+
+</style>
+<style id='rocket-lazyload-inline-css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://deyafabusiness.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+</style>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-content/plugins/blog-designer-pro/js/imagesloaded.pkgd.min.js?ver=6.1.1' id='bdp-imagesloaded-js' defer></script>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-content/plugins/blog-designer-pro/js/isotope.pkgd.min.js?ver=6.1.1' id='bdp_isotope_script-js' defer></script>
+<script id='ahc_front_js-js-extra'>
+var ahc_ajax_front = {"ajax_url":"https:\/\/deyafabusiness.com\/wp-admin\/admin-ajax.php","page_id":"1616","page_title":"\u0623\u0633\u0633 \u062a\u0635\u0645\u064a\u0645 \u0627\u0644\u0645\u0637\u0627\u0639\u0645 \u0648\u0627\u0644\u0643\u0627\u0641\u064a\u0647\u0627\u062a 2023 \u0641\u0649 \u0645\u0635\u0631 \u0648\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0647","post_type":"post"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://deyafabusiness.com/wp-content/cache/min/1/wp-content/plugins/visitors-traffic-real-time-statistics/js/front.js?ver=1682173195' id='ahc_front_js-js' defer></script>
+<script id='tc_csca-country-auto-script-js-extra'>
+var tc_csca_auto_ajax = {"ajax_url":"https:\/\/deyafabusiness.com\/wp-admin\/admin-ajax.php","nonce":"b6975bfa65"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://deyafabusiness.com/wp-content/cache/min/1/wp-content/plugins/country-state-city-auto-dropdown/assets/js/script.js?ver=1682173195' id='tc_csca-country-auto-script-js' defer></script>
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="rocketlazyloadscript" src='https://www.googletagmanager.com/gtag/js?id=G-DJPPZ81WYV' id='google_gtagjs-js' async></script>
+<script type="rocketlazyloadscript" id='google_gtagjs-js-after'>
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "G-DJPPZ81WYV");
+</script>
+
+<!-- End Google Analytics snippet added by Site Kit -->
+<link rel="https://api.w.org/" href="https://deyafabusiness.com/wp-json/" /><link rel="alternate" type="application/json" href="https://deyafabusiness.com/wp-json/wp/v2/posts/1616" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://deyafabusiness.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://deyafabusiness.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+<link rel='shortlink' href='https://deyafabusiness.com/?p=1616' />
+<link rel="alternate" type="application/json+oembed" href="https://deyafabusiness.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeyafabusiness.com%2F2023%2F01%2F10%2F%25d8%25af%25d9%258a%25d9%2583%25d9%2588%25d8%25b1-%25d9%2585%25d8%25b7%25d8%25b9%25d9%2585-%25d8%25a3%25d8%25b3%25d8%25b3-%25d8%25aa%25d8%25b5%25d9%2585%25d9%258a%25d9%2585-%25d8%25a7%25d9%2584%25d9%2585%25d8%25b7%25d8%25a7%25d8%25b9%25d9%2585-%25d9%2588%25d8%25a7%25d9%2584%25d9%2583%25d8%25a7%25d9%2581%25d9%258a%25d9%2587%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://deyafabusiness.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeyafabusiness.com%2F2023%2F01%2F10%2F%25d8%25af%25d9%258a%25d9%2583%25d9%2588%25d8%25b1-%25d9%2585%25d8%25b7%25d8%25b9%25d9%2585-%25d8%25a3%25d8%25b3%25d8%25b3-%25d8%25aa%25d8%25b5%25d9%2585%25d9%258a%25d9%2585-%25d8%25a7%25d9%2584%25d9%2585%25d8%25b7%25d8%25a7%25d8%25b9%25d9%2585-%25d9%2588%25d8%25a7%25d9%2584%25d9%2583%25d8%25a7%25d9%2581%25d9%258a%25d9%2587%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.88.0" /><!-- Analytics by WP Statistics v13.2.7 - https://wp-statistics.com/ -->
+<script type="rocketlazyloadscript">var WP_Statistics_http = new XMLHttpRequest();WP_Statistics_http.open('GET', 'https://deyafabusiness.com/wp-json/wp-statistics/v2/hit?_=1684496981&_wpnonce=c95ef5a094&wp_statistics_hit_rest=yes&referred=https%3A%2F%2Fdeyafabusiness.com%2F2023%2F01%2F10%2F%25D8%25AF%25D9%258A%25D9%2583%25D9%2588%25D8%25B1-%25D9%2585%25D8%25B7%25D8%25B9%25D9%2585-%25D8%25A3%25D8%25B3%25D8%25B3-%25D8%25AA%25D8%25B5%25D9%2585%25D9%258A%25D9%2585-%25D8%25A7%25D9%2584%25D9%2585%25D8%25B7%25D8%25A7%25D8%25B9%25D9%2585-%25D9%2588%25D8%25A7%25D9%2584%25D9%2583%25D8%25A7%25D9%2581%25D9%258A%25D9%2587%2F&exclusion_match=yes&exclusion_reason=CrawlerDetect&track_all=1&current_page_type=post&current_page_id=1616&search_query&page_uri=/2023/01/10/%D8%AF%D9%8A%D9%83%D9%88%D8%B1-%D9%85%D8%B7%D8%B9%D9%85-%D8%A3%D8%B3%D8%B3-%D8%AA%D8%B5%D9%85%D9%8A%D9%85-%D8%A7%D9%84%D9%85%D8%B7%D8%A7%D8%B9%D9%85-%D9%88%D8%A7%D9%84%D9%83%D8%A7%D9%81%D9%8A%D9%87/', true);WP_Statistics_http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");WP_Statistics_http.send(null);</script>
+
+<!-- Google AdSense snippet added by Site Kit -->
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+<!-- End Google AdSense snippet added by Site Kit -->
+
+<!-- Schema & Structured Data For WP v1.9.100 - -->
+<script type="application/ld+json" class="saswp-schema-markup-output">
+[{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"الرئيسيه","url":"https://deyafabusiness.com/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"من نحن","url":"https://deyafabusiness.com/about-us/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"خدمات مشروعات المطاعم والكافيهات","url":"https://deyafabusiness.com/services/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"جميع الخدمات","url":"https://deyafabusiness.com/services/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"مشروع براند مطعم أو كافيه جديد","url":"https://deyafabusiness.com/servicess/%d9%81%d9%83%d8%b1%d8%a9-%d9%85%d8%b4%d8%b1%d9%88%d8%b9-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d9%88-%d9%83%d8%a7%d9%81%d9%8a%d9%87-%d8%ac%d8%af%d9%8a%d8%af/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"دراسه جدوى مشروع مطعم وكافيه","url":"https://deyafabusiness.com/servicess/%d8%af%d8%b1%d8%a7%d8%b3%d8%a9-%d8%ac%d8%af%d9%88%d9%89-%d9%85%d8%b7%d8%b9%d9%85-%d9%88%d9%83%d8%a7%d9%81%d9%8a%d9%87/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"تصميم وتنفيذ ديكورات المطاعم والكافيهات خدمة متخصصه","url":"https://deyafabusiness.com/servicess/%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d9%88%d8%aa%d9%86%d9%81%d9%8a%d8%b0-%d8%af%d9%8a%d9%83%d9%88%d8%b1%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"شركة ضيافه بزنس ادارة وتشغيل المطاعم والكافيهات","url":"https://deyafabusiness.com/servicess/%d8%a3%d8%af%d8%a7%d8%b1%d8%a9-%d9%88%d8%aa%d8%b4%d8%ba%d9%8a%d9%84-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"وظائف الضيافه الموارد البشريه والتوظيف","url":"https://deyafabusiness.com/servicess/%d9%88%d8%b8%d8%a7%d8%a6%d9%81-%d8%a7%d9%84%d8%b6%d9%8a%d8%a7%d9%81%d9%87-%d8%ae%d8%af%d9%85%d8%a7%d8%aa-%d8%a7%d9%84%d8%aa%d9%88%d8%b8%d9%8a%d9%81/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"دليل تشغيل المطاعم والكافيهات","url":"https://deyafabusiness.com/servicess/%d8%af%d9%84%d9%8a%d9%84-%d8%a7%d9%84%d8%aa%d8%b4%d8%ba%d9%8a%d9%84-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"تدريب العاملين فى المطاعم والكافيهات خدمه متخصصه","url":"https://deyafabusiness.com/servicess/%d8%aa%d8%af%d8%b1%d9%8a%d8%a8-%d8%a7%d9%84%d8%b9%d8%a7%d9%85%d9%84%d9%8a%d9%86-%d9%81%d9%89-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"تطوير المطاعم والكافيهات لزيادة الأرباح","url":"https://deyafabusiness.com/servicess/%d8%aa%d8%b7%d9%88%d9%8a%d8%b1-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88-%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa-%d9%84%d8%b2%d9%8a%d8%a7%d8%af%d8%a9-%d8%a7%d9%84%d8%a3%d8%b1/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"الفرنشايز ( الامتياز التجارى)","url":"https://deyafabusiness.com/servicess/%d8%aa%d8%a3%d9%87%d9%8a%d9%84-%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d9%85%d8%a7%d8%aa-%d8%a7%d9%84%d8%aa%d8%ac%d8%a7%d8%b1%d9%89%d9%87-%d9%84%d9%84%d9%81%d8%b1%d9%86%d8%b4%d8%a7%d9%8a%d8%b2/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"خبراتنا وسابقة أعمالنا","url":"https://deyafabusiness.com/experience-work/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"أسئلة شائعه","url":"https://deyafabusiness.com/faq/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"اتصل بنا","url":"https://deyafabusiness.com/contact-us/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"مجتمع الضيافه","url":"https://deyafabusiness.com/deyafa-community/"},{"@context":"https://schema.org","@type":"SiteNavigationElement","@id":"https://deyafabusiness.com/#header-menu","name":"English","url":"https://deyafabusiness.com/en"}]},
+
+{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://deyafabusiness.com","name":"ضيافة بزنس"}},{"@type":"ListItem","position":2,"item":{"@id":"https://deyafabusiness.com/category/%d8%a7%d9%84%d8%aa%d8%b5%d9%86%d9%8a%d9%81-%d8%a7%d9%84%d8%b1%d8%a6%d9%8a%d8%b3%d9%8a/","name":"التصنيف الرئيسي"}},{"@type":"ListItem","position":3,"item":{"@id":"https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/","name":"أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه"}}]},
+
+{"@context":"https://schema.org","@type":"Article","@id":"https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/#Article","url":"https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/","inLanguage":"ar","mainEntityOfPage":"https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/","headline":"أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه","description":"تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه تتطلب عملية تصميم ديكور مطعم الكثير من المجهود والتخطيط، والمعرفه أسس تصميم المطاعم الحديثه","articleBody":"  ديكور مطعم أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه :   أسس تصميم المطاعم والكافيهات 2023 , لقد تغيرت صناعة المطاعم بشكل كبير خلال العقود القليلة الماضية، وهناك اتجاهات وأساليب جديدة لتطوير هذه الصناعة ما وضعها ضمن واحدة من أبرز المشاريع التي يتجه نحوها الكثير من رواد ورجال الأعمال.       \t     \tتتطلب عملية تصميم ديكور مطعم الكثير من المجهود والتخطيط، والمعرفه أسس تصميم المطاعم بأنواعها   \t هناك بعض النقاط الأساسية التي لا يمكن إغفالها عند فتح مطعم.   \tإذا سألت أي شخص ما الذي يجذب انتبهاك فور دخولك لأي مطعم ستكون إجابته بالتأكيد؛ التصميم.   \t العديد من أصحاب المشاريع لا يهتمون بموضع ديكورات المطاعم بالشكل الصحيح خلال مرحلة التنفيذ،   \tوقد ينتهي بهم المطاف بديكورات غير مواكبة للتطور والأذواق المتغيرة بالرغم من إنفاق الكثير من المال.   \tقد يشعر أصحاب المطاعم أيضًا بالارتباك أو التخويف بسبب مشاريع التجديد الكبيرة والمكلفة والتي تستغرق وقتًا طويلاً. لحسن الحظ، لا يجب أن يكون تحديث الديكور الخاص بك أمرًا صعبًا،   \tيمكن أن يؤدي إجراء بعض التغييرات الصغيرة إلى تغيير جذري في المظهره العام لمطعمك وجذب فئة جديدة وكبيرة من العملاء.         10 خطوات لإتقان عمل ديكور مطعم أسس تصميم المطاعم والكافيهات :  1. أسس تصميم المطاعم والكافيهات 2023 تنفيذ نظام ألوان جديد     \t     \tتعتبر ديكورات المطاعم أحد أسهل الطرق وأكثرها تكلفة لتغيير مظهر منطقة تناول الطعام الخاصة بمكانك.   \tيمكن أن يمنح تغيير الألوان على الجدران الخاصة بك لعملائك تجربة جلوس وجو مختلف تمامًا.   \tيمكنك القيام بالطلاء أنت وفريقك إذا كنت تعاني من مشاكل مادية ولا يمكنك تعيين شخص محترف.   \t قبل أن تبدأ في الطلاء، يجب عليك أولاً اختيار نظام ألوان يكمل مفهوم المطعم الخاص بك ويلائم علامتك التجارية.   \tبدلاً من طلاء مساحة تناول الطعام بالكامل، يمكنك استخدام جدار واحد وطلائة بلون مختلف عن الألوان المحايدة لتحسين الشكل النهائي للغرفة وإحداث تباين مع الجدران الأخرى.   \tيمكنك الاستعانه ببعض الرسوم والنقوشات الحديثة على هذا الجدار مع ألوان ساطعة تجذب انتباه رواد مطعمك، وتمنح المكان مظهرًا أكثر حداثة.   \tتتبع العديد من المطاعم طريقة التصميم الحديثة في السنوات الأخيرة كونها لا تطلب إنفاق مبالغ هائلة من المال كما أنها تدوم لبضع سنوات دون الحاجة للتغير المستمر.   \tضيافه بزنس متخصصون تصميم وتنفيذ المطاعم والكافيهات بخبرة السلاسل العالميه.        2. إضافة النباتات إلى المساحة الخاصة بك أسس تصميم المطاعم والكافيهات 2023  إضافة النباتات إلى مساحة تناول الطعام الخاصة بك يمكن أن تجلب أجواء هادئة، ومنعشة، وتدفق من الألوان الطبيعية إلى المنطقة الأمامية للمكان. ولكن، لا يجب استخدام نباتات حقيقية لأن الحفاظ عليها سيكلف الكثير من المال، كما أنها قد تسبب الحساسية لدى العملاء، وتخلق روائح يمكن أن تتعارض مع روائح طعامك.  إذا كنت ترغب في استخدام نباتات حقيقية، فإن الصبار بعتبر من الخيارات الممتازة حيث يمكن العناية بها بسهولة ولا تنبعث منها أي رائحة. بالإضافة إلى ذلك، هناك الكثير من النباتات المزيفة والتي تتمتع بشكل رائع ومميز يمكنك الاستعانة بها لتزيين مساحتك.    3. لماذا لا تستعين بالأعمال الفنية؟     \t     \tإذا كنت تبحث عن مظهر فني ومعاصر، فإن تعليق بعض الأعمال الفنية في مساحة الطعام الخاصة بك يعد فكرة ممتازة. يمكن أن يكون العمل الفني المستخدم في ديكورات المطاعم أي شيء، بدءًا من الصور الفوتوغرافية إلى اللوحات الفنية. وحتى الفن ثلاثي الأبعاد والمنحوتات.   \tيمكنك أيضا إضافة لمستك الشخصية على هذه الأعمال الفنية.   \t يمكنك الاستعانة بأعمال الفنانين المحليين في منطقتك ومنح العملاء خيار شرائها , لجذب بعض العملاء أو  فئة معينة من العملاء .   \tبهذه الطريقة تحصل على فن جميل لتعلقه في مطعمك، كما أنك تساعد مجتمع الفن المحلي.   \tإذا كان مطعمك يقدم مطبخ معين أو دولة محددة، فإن عرض الصور واللوحات الفنية للمناظر الطبيعية والمعالم الشهيرة في تلك المنطقة هو طريقة رائعة لمنح مطعمك إحساسًا بالأصالة ووضع رواد المطعم في جو مميز لاختبار التجربة كاملة.        4. لا تنفق أموالك على مفارش المائدة  أسس تصميم المطاعم والكافيهات 2023 :     \t     \tفي السنوات الماضية، أعطت مفارش المائدة للعملاء انطباعًا عن الطعام الفاخر والأناقة.   \tفي الوقت الحاضر، لم تعد مفارش المائدة شيئا هاما يجب تضمينة ضمن قائمة ديكورات المطاعم.   \tعلى الجانب الآخر يتم استخدام طاولات خشبية عارية، والتي تتناسب مع الحد الأدنى من الجمال، تتناسب موضة التصميم هذه مع وسائل التواصل الاجتماعي وخاصة إنستجرام.   \tإذا كنت تفكر في كيف تقوم بتزين طاولاتك فتخلى عن مفارش الطاولة بالتأكيد؛ صيانتها باهظة الثمن لأنها تحتاج إلى غسلها واستبدالها باستمرار.   \tإذا كنت ترغب في منح عملائك شعورًا مماثلًا بالأناقة، يمكنك استخدام المناديل القماشية.   \tالأمر الوحيد الذي يمكن يمكن أن تساعد فيه مفارش الطاولة هو حماية سطح طاولتك من الخدوش والبقع التي تسببها أواني الطعام أو أدوات المائدة. لذا من الأفضل انتقاء طاولاتك بعانية من أجود الخامات.   \tضيافه بزنس متخصصون تصميم وتنفيذ المطاعم والكافيهات بخبرة السلاسل العالميه.        &nbsp;     أسس تصميم ديكورات المطاعم  5. أسس تصميم المطاعم والكافيهات 2023 استخدم الضوء بشكل مميز     \t     \tيمكن أن يكون لتغيير الإضاءة وكمية الضوء في ديكورات مطعمك تأثير كبير على الجو العام.   \tيمنح المزيد من الإضاءة مكانك جوًا مشرقًا وترحيبيًا، في حين تضفي مساحة تناول الطعام الباهتة إحساسًا أكثر حميمية ورومانسية.   \tهناك طرق مختلفة يمكنك من خلالها تغيير كمية الضوء في مساحة تناول الطعام الخاصة بك.   \tعلى سبيل المثال؛ تخلق الإضاءة المزاجية والأضواء المعلقة والمصابيح المعلقة إضاءة ناعمة ومنتشرة، بينما تساعد الشموع في إبراز الجو الرومانسي.   \tيمكنك أيضًا ضبط الإضاءة الطبيعية القادمة إلى منطقة تناول الطعام الخاصة بك بالستائر والستائر المعتمة.   \tلا يمكن للستائر فقط تغيير كمية الضوء القادمة إلى مطعمك، ولكن يمكنها أيضًا توفير مجموعة من الألوان والذوق الزخرفي الذي يمكنك استخدامه لتتناسب مع نظام الألوان بالمكان.   \tيمكنك اختيار نوع الإضاءة الخاصة بمطعمك بناء على مفهوم المكان والرسالة التي ترغب أن يتلاقها عملاؤك.        &nbsp;     \t ضيافه بزنس متخصصون تصميم وتنفيذ المطاعم والكافيهات بخبرة السلاسل العالميه.     ديكورات المطاعم  6. إعادة تصميم القائمة الخاصة بك ديكور مطعم أسس تصميم المطاعم بأنواعها :     \t     \tقد يكون تصميم القائمة لايتم الاهتمام بها في ديكورات المطاعم بالرغم من أهميتها ،  نظرا لتأثيرها الكبير على كيفية إدراك عملائك لنمط الطعام الذي تقدمه.   \t القوائم القديمة مع الأغلفة المتهالكة انطباع رديئ ورخيص عن مطعمك.   \tأيضا ابتعد من نسخ أفكار الآخرين وتقليدها؛ بدلاً من طباعة قائمتك على ورق قائمة مصمم مسبقًا،   \tيمكنك إنشاء تصميم فريد خاص بك باستخدام برنامج تصميم مجاني.   \tأما إذا كنت تريد قائمة ذات مظهر أكثر احترافًا وتعكس مفهوم مطعمك،   \tيمكنك الاستعانة بفريق نصميم ضيافة بيزنس والذي يحرص على توصيل رؤية مطعمك والأطباق والمشروبات التي تقدمها في أفضل صورة.   \tلا تنس إقران قائمتك الجديدة والمحسّنة بغطاء قائمة أنيق لإكمال المظهر وحماية الورق من التلف والبقع.        7. تحديث أدوات الخدمة وأدوات المائدة     \t     \tهل لأدوات الخدمة والمائدة علاقة بديكورات المطاعم؟   \tسؤال قد يطرحه الكثيرين ممن يفتتحون مكانا جديدا، والإجابة هي نعم بالتأكيد.   \tيمكن أن تؤثر القطع التي تقدم طعامك عليها على تصور العملاء لمطعمك.   \tمثال: إذا كنت تستخدم ألواح خزف قديمة بها خدوش على السطح، فسوف ينعكس ذلك بشكل سيء على عملاؤك.   \tقد تحجم بعض المطاعم عن تغيير أواني الطعام وأدوات التقديم  لأنها باهظة الثمن، ولكن هناك خيارات ميسورة التكلفة.        8. تقسيم وتوزيع مساحة الجلوس     \t     \tلن ينتهي تصميم مطعمك بطلاء الجدران أو وضع عدد من نباتات الزينة،   \tيجب أن يشعر عملاؤك بالراحة والخصوصية أثناء الجلوس وتناول الطعام.   \tلذا الموازنة بين المساحات الفارغة وأماكن الجلوس هي أمر بالغ الأهمية عند تصميم ديكورات المطاعم.   \tاعتمادًا على نوع المطعم ، يجب أن تقرر هل تريد التركيز على زيادة عدد الزوار إلى الحد الأقصى أو خلق جو مريح وممتع.   \tأيا كان خيارك فتجنب تكديس عملائك في مساحة واحدة ضيقة، واترك مساحة كافية للخوادم للتنقل بسهولة ومنح العملاء الخصوصية اللازمة.   \tإذا أمكن، حاول تجنب وضع أماكن الجلوس في المناطق التي بها مشاكل مثل؛ المدخل، وأمام المطبخ، وأمام الحمامات.        9. أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه      ضيافه بزنس متخصصون تصميم وتنفيذ المطاعم والكافيهات بخبرة السلاسل العالميه.  خصص جزء من ديكورات المطعم للبار :     \t     \tإذا كان لديك مساحة كافية، فقد يكون من الجيد تضمين بار لمشروبات القهوه الساخنه والبارده بأنواعها أو للعصائر والكوكتيلات الصحيه .   \tإنها طريقة رائعة لزيادة أرباحك،  فالنسبة لمعظم المطاعم تتمثل مبيعات المشروبات حوالي 30٪ من العائدات.   \tإذا كانت منطقة البار الخاصة بمطعمك تبدو وكأنها إضافة جذابة وشقية، ستساعدك في جذب فئة أخرى من العملاء لمكانك.   \tيمكنك الاستعانة بخبرة ضيافة بيزنس لتخصيص تصميم بار ملائم لمساحة ومضمون المطعم الخاص بك.        10. الموسيقى والصوت جزء من ديكورات المطاعم  الموسيقى هي عامل يمكن أن يجعل أجواءك ممتعة أو يمكن أن تفكك أي مشهد للأجواء وتتسبب في خلق جو ممل داخل المكان.  هل زرت من قبل مطعمًا به موسيقى سيئة حيث يكاد يكون من المستحيل إجراء محادثة؟  أظهر عدد من الدراسات أن موسيقى الخلفية الهادئة لا تجعل الموظفين أكثر سعادة فحسب، بل تحسن أيضًا صورة المكان وتحفز شهية العملاء.  &nbsp;     أسس تصميم المطاعم بأنواعها    &nbsp;  11. أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه  يونيفورم العاملين والمطبخ أيضا جزء من الديكور أسس تصميم المطاعم بأنواعها     \t     \tديكور مطعم أسس تصميم المطاعم بأنواعها , فى معظم الأحيان  ما يتم التغاضي عن هذا في تصميم المطعم لأنه مخفي عن أعين الجمهور (ما لم يكن مطعمًا ذو مفهوم مطبخ مفتوح، والذي أصبح مشهورًا).   \tربما يكون تصميم مطبخك هو أهم جزء في تصميم مطعمك:   \tتقترح مجلة Total Food Service تخصيص 30٪ إلى 40٪ من مساحتك لمطبخك للسماح بإعداد وتجهيز الطعام  والطهي ومساحة حره للحركة .   \t نريد أن نناقش بإيجاز ثلاثة خيارات لتصميم المطبخ: Line و Island و Zone.   \tيوفر الخيار الأول Line للعمال ثلاث مناطق متميزة لإنتاج الطعام، مما يبقي الموظفين في أماكن عمل محددة.   \tأما الخيار الثاني وهو Island فمخصص للعمليات التي تقع في وسط الغرفة، وهي مثالية للمساحات التي تتطلب الإشراف بين الموظفين.   \tإذا كانت لديك مساحة محدودة، فقد ترغب في التفكير في الخيار الثالث Zone، والذي يمكن تكييفه مع مجموعة متنوعة من الأشكال والأحجام.           \t     \tيؤجل العديد من مالكي المطاعم تحديث ديكورات المطاعم لأنهم يعتقدون أنه ينطوي على عمليات تجديد صعبة ومكلفة، ولكن ببساطة عن طريق تغيير بعض الأشياء الصغيرة في مطعمك.   \t   يمكنك تغيير طريقة رؤية العملاء لمطعمك بشكل جذري. على سبيل المثال:   \tطلاء جدرانك بلون أكثر إشراقًا   \tأو إضافة ستائر جديدة يمكن أن يجلب المزيد من الضوء والحيوية إلى غرفة الطعام الخاصة بك،   \tأو يمكن أن تضفي القوائم الجديدة مظهرًا جديدًا على مكانك. لذلك، إذا كنت تضع هذه النصائح في الاعتبار ، فيمكنك تحسين مظهر وتصميم مطعمك بشكل كبير.        12 - الخبره تلعب الدور الأساسى فى النجاح :         لاتبخل على مشروعك بالخبره , ستوفر الكثير من المال وتتجنب المشاكل وتدفع مشروعك نحو النجاح , يمكنك الاستعانه بخبراتنا فى ضيافه بزنس لتصميم وتنفيذ مشروع ناجح.       \tضيافه بزنس متخصصون تصميم وتنفيذ المطاعم والكافيهات بخبرة السلاسل العالميه.     - شركة أنجاز جروب (ضيافه بزنس ) شركه مسجله فى بوابة الفواتير الألكترونيه الحكوميه  , ويتم أصدار فاتورة الكترونيه معتمده رسميا باسم الشركه أو العميل وأرسالها الى العملاء وذلك لجميع الخدمات المقدمه للعملاء.   أبدا مشروعك  أتصل بنا           التمثيل التجارى لشركة ضيافه بزنس  ادارة وتشغيل المطاعم والكافيهات  الفرنشايز للمطاعم والكافيهات ( الامتياز التجارى)  تطوير المطاعم و الكافيهات  خدمات التدريب للمطاعم و الكافيهات المتخصصه  دليل التشغيل للمطاعم و الكافيهات كيف نساعدك في ذلك  وظائف الضيافه الموارد البشريه والتوظيف  تصميم ديكور المطاعم والكافيهات خدمة مميزة  دراسه جدوى مشروع مطعم أو كافيه  صفحة الفيس بوك","keywords":"أسس تصميم المطاعم, أفكار تصميم مطاعم, تصميم المطاعم, تصميم بار كافيه, تصميم ديكورات مطاعم, ديكورات كافيهات غير مكلفة, ديكورات مطاعم 2021, ديكورات مطاعم وكافيهات, ضيافه بزنس متخصصون تصميم وتنفيذ المطاعم والكافيهات بخبرة السلاسل العالميه., ","datePublished":"2023-01-10T00:00:21+02:00","dateModified":"2023-01-17T08:29:10+02:00","author":{"@type":"Person","name":"admin","description":"","url":"https://deyafabusiness.com/author/admin/","sameAs":["https://deyafabusiness.com","https://www.facebook.com/ingaz99","https://twitter.com/DeyafaBusiness","https://m.youtube.com/watch?v=SAwxj0g7Fec"],"image":{"@type":"ImageObject","url":"https://secure.gravatar.com/avatar/cae7f779a72a74f3f98436739ba20ee7?s=96&d=mm&r=g","height":96,"width":96}},"editor":{"@type":"Person","name":"admin","description":"","url":"https://deyafabusiness.com/author/admin/","sameAs":["https://deyafabusiness.com","https://www.facebook.com/ingaz99","https://twitter.com/DeyafaBusiness","https://m.youtube.com/watch?v=SAwxj0g7Fec"],"image":{"@type":"ImageObject","url":"https://secure.gravatar.com/avatar/cae7f779a72a74f3f98436739ba20ee7?s=96&d=mm&r=g","height":96,"width":96}},"publisher":{"@type":"Organization","name":"ضيافة","url":"https://deyafabusiness.com","logo":{"@type":"ImageObject","url":"https://deyafabusiness.com/wp-content/uploads/2020/06/arabic.jpg","width":"607","height":"643"}},"comment":null,"speakable":{"@type":"SpeakableSpecification","xpath":["/html/head/title","/html/head/meta[@name='description']/@content"]},"image":[{"@type":"ImageObject","@id":"https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/#primaryimage","url":"https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-1200x835.jpg","width":"1200","height":"835"},{"@type":"ImageObject","url":"https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-1200x900.jpg","width":"1200","height":"900"},{"@type":"ImageObject","url":"https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-1200x675.jpg","width":"1200","height":"675"},{"@type":"ImageObject","url":"https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2.jpg","width":800,"height":451},{"@type":"ImageObject","url":"https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4.jpg","width":700,"height":470},{"@type":"ImageObject","url":"https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf.jpg","width":700,"height":463},{"@type":"ImageObject","url":"https://deyafabusiness.com/wp-content/uploads/2022/02/صورة-التمثيل-التجارى-2-300x149.jpg","width":300,"height":149}]}]
+</script>
+
+		<style id="wp-custom-css">
+			.single-blog-item span ,.date,.categories-box,.tags-box,.search-box{
+    display: none !important;
+}
+.col-lg-8 {
+	padding : 20px;
+    border: 1px solid #ccc;
+}
+#page-id-33 .col-lg-8{border:none;}
+.blog-details-heading ul li{display:none;}
+body,html{overflow-x:hidden;}
+a, a:focus, a:active, a:hover, a:visited {
+    color: #822F2B;
+    outline: none;
+}
+.blog-details-area .col-lg-8.col-md-12,.blog-area .col-lg-8.col-md-12
+{
+	background:white !important;
+}
+.blog-details-content > p:nth-child(1)
+{
+	display:none;
+}
+section.contact div.form div.input input, section.contact div.form div.input select
+{
+	direction:rtl;
+}
+.blog-details-content figure
+{
+	    width: 100% !important;
+text-align:center;
+}
+.blog-details-content figure img,.blog-details-content img
+{
+	width: auto;
+height: auto;
+margin: 20px 0;
+}
+.single-blog-item
+{
+	padding: 0;
+}
+.blog-details .wp-post-image 
+{
+	width:100%;
+}
+.blog-area .col-lg-8 .wp-post-image 
+{
+	height:250px;
+}
+.blog-item
+{
+	margin-bottom:35px;
+}
+.blog-item h4
+{
+	margin:16px 0;
+	font-size: 22px;
+line-height: 1.5;
+}
+.single-blog-item:hover
+{
+	background:none !important;
+	background-color:white !important;
+	transform:none !important;
+}
+.blog-details-content p
+{
+	    text-align: justify;
+    padding-left: 40px;
+}
+.blog-details-content h1, .blog-details-content h2, .blog-details-content h3, .blog-details-content h4, .blog-details-content h5, .blog-details-content h6
+{
+	margin-top:15px;
+}
+.wpcf7-form-control.wpcf7-select 
+{
+	width:100%;
+}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script>	<meta property="og:image" content="https://deyafabusiness.com/wp-content/uploads/2020/06/logo-arabic-1.jpg" />
+
+
+</head>
+
+<body class="rtl post-template-default single single-post postid-1616 single-format-standard">
+
+	
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>    <!-- Header -->
+    <header>
+        <div class="container-fluid d-flex align-items-end justify-content-between">
+            <a href="https://deyafabusiness.com/" class="logo">
+                <img width="200" height="84" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%2084'%3E%3C/svg%3E" alt="ضيافة بيزنس لوجو" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2020/05/logo.png"><noscript><img width="200" height="84" src="https://deyafabusiness.com/wp-content/uploads/2020/05/logo.png" alt="ضيافة بيزنس لوجو"></noscript>
+            </a>
+            <ul id="menu-header-menu" class="menue"><li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-39"><a href="https://deyafabusiness.com/">الرئيسيه</a></li>
+<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a href="https://deyafabusiness.com/about-us/">من نحن</a></li>
+<li id="menu-item-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-45"><a href="https://deyafabusiness.com/services/">خدمات مشروعات المطاعم والكافيهات</a>
+<ul class="sub-menu">
+	<li id="menu-item-794" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-794"><a href="https://deyafabusiness.com/services/">جميع الخدمات</a></li>
+	<li id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-584"><a href="https://deyafabusiness.com/servicess/%d9%81%d9%83%d8%b1%d8%a9-%d9%85%d8%b4%d8%b1%d9%88%d8%b9-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d9%88-%d9%83%d8%a7%d9%81%d9%8a%d9%87-%d8%ac%d8%af%d9%8a%d8%af/">مشروع براند مطعم أو كافيه جديد</a></li>
+	<li id="menu-item-583" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-583"><a href="https://deyafabusiness.com/servicess/%d8%af%d8%b1%d8%a7%d8%b3%d8%a9-%d8%ac%d8%af%d9%88%d9%89-%d9%85%d8%b7%d8%b9%d9%85-%d9%88%d9%83%d8%a7%d9%81%d9%8a%d9%87/">دراسه جدوى مشروع مطعم وكافيه</a></li>
+	<li id="menu-item-582" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-582"><a href="https://deyafabusiness.com/servicess/%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d9%88%d8%aa%d9%86%d9%81%d9%8a%d8%b0-%d8%af%d9%8a%d9%83%d9%88%d8%b1%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a/">تصميم وتنفيذ ديكورات المطاعم والكافيهات خدمة متخصصه</a></li>
+	<li id="menu-item-581" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-581"><a href="https://deyafabusiness.com/servicess/%d8%a3%d8%af%d8%a7%d8%b1%d8%a9-%d9%88%d8%aa%d8%b4%d8%ba%d9%8a%d9%84-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/">شركة ضيافه بزنس ادارة وتشغيل المطاعم والكافيهات</a></li>
+	<li id="menu-item-580" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-580"><a href="https://deyafabusiness.com/servicess/%d9%88%d8%b8%d8%a7%d8%a6%d9%81-%d8%a7%d9%84%d8%b6%d9%8a%d8%a7%d9%81%d9%87-%d8%ae%d8%af%d9%85%d8%a7%d8%aa-%d8%a7%d9%84%d8%aa%d9%88%d8%b8%d9%8a%d9%81/">وظائف الضيافه الموارد البشريه والتوظيف</a></li>
+	<li id="menu-item-579" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-579"><a href="https://deyafabusiness.com/servicess/%d8%af%d9%84%d9%8a%d9%84-%d8%a7%d9%84%d8%aa%d8%b4%d8%ba%d9%8a%d9%84-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/">دليل تشغيل المطاعم والكافيهات</a></li>
+	<li id="menu-item-578" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-578"><a href="https://deyafabusiness.com/servicess/%d8%aa%d8%af%d8%b1%d9%8a%d8%a8-%d8%a7%d9%84%d8%b9%d8%a7%d9%85%d9%84%d9%8a%d9%86-%d9%81%d9%89-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/">تدريب العاملين فى المطاعم والكافيهات خدمه متخصصه</a></li>
+	<li id="menu-item-577" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-577"><a href="https://deyafabusiness.com/servicess/%d8%aa%d8%b7%d9%88%d9%8a%d8%b1-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88-%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa-%d9%84%d8%b2%d9%8a%d8%a7%d8%af%d8%a9-%d8%a7%d9%84%d8%a3%d8%b1/">تطوير المطاعم والكافيهات لزيادة الأرباح</a></li>
+	<li id="menu-item-576" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-576"><a href="https://deyafabusiness.com/servicess/%d8%aa%d8%a3%d9%87%d9%8a%d9%84-%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d9%85%d8%a7%d8%aa-%d8%a7%d9%84%d8%aa%d8%ac%d8%a7%d8%b1%d9%89%d9%87-%d9%84%d9%84%d9%81%d8%b1%d9%86%d8%b4%d8%a7%d9%8a%d8%b2/">الفرنشايز ( الامتياز التجارى)</a></li>
+</ul>
+</li>
+<li id="menu-item-43" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a href="https://deyafabusiness.com/experience-work/">خبراتنا وسابقة أعمالنا</a></li>
+<li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="https://deyafabusiness.com/faq/">أسئلة شائعه</a></li>
+<li id="menu-item-41" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41"><a href="https://deyafabusiness.com/contact-us/">اتصل بنا</a></li>
+<li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42"><a href="https://deyafabusiness.com/deyafa-community/">مجتمع الضيافه</a></li>
+<li id="menu-item-65" class="font-bolder menu-item menu-item-type-custom menu-item-object-custom menu-item-65"><a href="https://deyafabusiness.com/en">English</a></li>
+</ul>            <a class="mobile-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <ul id="menu-mobile-menu" class="mobile-menu"><li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-52"><a href="https://deyafabusiness.com/">الرئيسيه</a></li>
+<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="https://deyafabusiness.com/about-us/">من نحن</a></li>
+<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-50"><a href="https://deyafabusiness.com/services/">خدمات مشروعات المطاعم والكافيهات</a>
+<ul class="sub-menu">
+	<li id="menu-item-796" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-796"><a href="https://deyafabusiness.com/services/">جميع الخدمات</a></li>
+	<li id="menu-item-575" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-575"><a href="https://deyafabusiness.com/servicess/%d9%81%d9%83%d8%b1%d8%a9-%d9%85%d8%b4%d8%b1%d9%88%d8%b9-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d9%88-%d9%83%d8%a7%d9%81%d9%8a%d9%87-%d8%ac%d8%af%d9%8a%d8%af/">مشروع براند مطعم أو كافيه جديد</a></li>
+	<li id="menu-item-573" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-573"><a href="https://deyafabusiness.com/servicess/%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d9%88%d8%aa%d9%86%d9%81%d9%8a%d8%b0-%d8%af%d9%8a%d9%83%d9%88%d8%b1%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a/">تصميم وتنفيذ ديكورات المطاعم والكافيهات خدمة متخصصه</a></li>
+	<li id="menu-item-574" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-574"><a href="https://deyafabusiness.com/servicess/%d8%af%d8%b1%d8%a7%d8%b3%d8%a9-%d8%ac%d8%af%d9%88%d9%89-%d9%85%d8%b7%d8%b9%d9%85-%d9%88%d9%83%d8%a7%d9%81%d9%8a%d9%87/">دراسه جدوى مشروع مطعم وكافيه</a></li>
+	<li id="menu-item-572" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-572"><a href="https://deyafabusiness.com/servicess/%d8%a3%d8%af%d8%a7%d8%b1%d8%a9-%d9%88%d8%aa%d8%b4%d8%ba%d9%8a%d9%84-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/">شركة ضيافه بزنس ادارة وتشغيل المطاعم والكافيهات</a></li>
+	<li id="menu-item-571" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-571"><a href="https://deyafabusiness.com/servicess/%d9%88%d8%b8%d8%a7%d8%a6%d9%81-%d8%a7%d9%84%d8%b6%d9%8a%d8%a7%d9%81%d9%87-%d8%ae%d8%af%d9%85%d8%a7%d8%aa-%d8%a7%d9%84%d8%aa%d9%88%d8%b8%d9%8a%d9%81/">وظائف الضيافه الموارد البشريه والتوظيف</a></li>
+	<li id="menu-item-570" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-570"><a href="https://deyafabusiness.com/servicess/%d8%af%d9%84%d9%8a%d9%84-%d8%a7%d9%84%d8%aa%d8%b4%d8%ba%d9%8a%d9%84-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/">دليل تشغيل المطاعم والكافيهات</a></li>
+	<li id="menu-item-569" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-569"><a href="https://deyafabusiness.com/servicess/%d8%aa%d8%af%d8%b1%d9%8a%d8%a8-%d8%a7%d9%84%d8%b9%d8%a7%d9%85%d9%84%d9%8a%d9%86-%d9%81%d9%89-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/">تدريب العاملين فى المطاعم والكافيهات خدمه متخصصه</a></li>
+	<li id="menu-item-568" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-568"><a href="https://deyafabusiness.com/servicess/%d8%aa%d8%b7%d9%88%d9%8a%d8%b1-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88-%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa-%d9%84%d8%b2%d9%8a%d8%a7%d8%af%d8%a9-%d8%a7%d9%84%d8%a3%d8%b1/">تطوير المطاعم والكافيهات لزيادة الأرباح</a></li>
+	<li id="menu-item-567" class="menu-item menu-item-type-post_type menu-item-object-servicess menu-item-567"><a href="https://deyafabusiness.com/servicess/%d8%aa%d8%a3%d9%87%d9%8a%d9%84-%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d9%85%d8%a7%d8%aa-%d8%a7%d9%84%d8%aa%d8%ac%d8%a7%d8%b1%d9%89%d9%87-%d9%84%d9%84%d9%81%d8%b1%d9%86%d8%b4%d8%a7%d9%8a%d8%b2/">تأهيل العلامات التجاريه للأمتياز التجارى</a></li>
+</ul>
+</li>
+<li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="https://deyafabusiness.com/experience-work/">خبراتنا وسابقة أعمالنا</a></li>
+<li id="menu-item-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"><a href="https://deyafabusiness.com/deyafa-community/">مجتمع الضيافه</a></li>
+<li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="https://deyafabusiness.com/faq/">أسئلة شائعه</a></li>
+<li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="https://deyafabusiness.com/contact-us/">اتصل بنا</a></li>
+<li id="menu-item-67" class="font-bolder menu-item menu-item-type-custom menu-item-object-custom menu-item-67"><a href="https://deyafabusiness.com/en">English</a></li>
+</ul>        </div>
+    </header>
+    <!-- // Header -->
+	<!-- Messenger link -->
+	<a href="http://m.me/ingaz99" class="messenger-link" target="_blank">
+		<i class="fab fa-facebook-messenger"></i>
+	</a>
+	<!-- // Messenger link -->
+	
+        <!-- Blog Details Area -->
+        <section class="blog-details-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12">
+                    	                        <div class="blog-details">
+                            <div class="thumb">
+                                <img width="1024" height="713" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20713'%3E%3C/svg%3E" class="img-fluid wp-post-image" alt="دليل تشغيل المطاعم والكافيهات" decoding="async" data-lazy-srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg 1024w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-300x209.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-150x104.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-768x535.jpg 768w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-24x17.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-36x25.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-48x33.jpg 48w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg" /><noscript><img width="1024" height="713" src="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg" class="img-fluid wp-post-image" alt="دليل تشغيل المطاعم والكافيهات" decoding="async" srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg 1024w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-300x209.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-150x104.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-768x535.jpg 768w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-24x17.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-36x25.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-48x33.jpg 48w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript>                                
+                                <div class="date">
+                                    <span style="color: #fff !important;">10/01/2023</span>
+                                </div>
+                            </div>
+                            
+                            <div class="blog-details-heading">
+                                <h3>أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه</h3>
+                                <ul>
+                                    <li>نشر بواسطة: Admin</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="blog-details-content">
+                                <h2 style="padding-right: 40px;"><span style="font-size: 16px;">  ديكور مطعم أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه : </span></h2>
+<p style="padding-right: 80px;">أسس تصميم المطاعم والكافيهات 2023 , لقد تغيرت صناعة المطاعم بشكل كبير خلال العقود القليلة الماضية، وهناك اتجاهات وأساليب جديدة لتطوير هذه الصناعة ما وضعها ضمن واحدة من أبرز المشاريع التي يتجه نحوها الكثير من رواد ورجال الأعمال.</p>
+
+<ul>
+ 	<li style="list-style-type: none;">
+<ul>
+ 	<li>تتطلب عملية تصميم ديكور مطعم الكثير من المجهود والتخطيط، والمعرفه أسس تصميم المطاعم بأنواعها</li>
+ 	<li> هناك بعض النقاط الأساسية التي لا يمكن إغفالها عند فتح مطعم.</li>
+ 	<li>إذا سألت أي شخص ما الذي يجذب انتبهاك فور دخولك لأي مطعم ستكون إجابته بالتأكيد؛ التصميم.</li>
+ 	<li> العديد من أصحاب المشاريع لا يهتمون بموضع ديكورات المطاعم بالشكل الصحيح خلال مرحلة التنفيذ،</li>
+ 	<li>وقد ينتهي بهم المطاف بديكورات غير مواكبة للتطور والأذواق المتغيرة بالرغم من إنفاق الكثير من المال.</li>
+ 	<li>قد يشعر أصحاب المطاعم أيضًا بالارتباك أو التخويف بسبب مشاريع التجديد الكبيرة والمكلفة والتي تستغرق وقتًا طويلاً. لحسن الحظ، لا يجب أن يكون تحديث الديكور الخاص بك أمرًا صعبًا،</li>
+ 	<li>يمكن أن يؤدي إجراء بعض التغييرات الصغيرة إلى تغيير جذري في المظهره العام لمطعمك وجذب فئة جديدة وكبيرة من العملاء.<span id="more-1616"></span></li>
+</ul>
+</li>
+</ul>
+<h2 style="padding-right: 80px;"><span style="font-size: 16px;"> 10 خطوات لإتقان عمل ديكور مطعم أسس تصميم المطاعم والكافيهات :</span></h2>
+<h3 style="padding-right: 80px;">1. أسس تصميم المطاعم والكافيهات 2023 تنفيذ نظام ألوان جديد</h3>
+<ul>
+ 	<li style="list-style-type: none;">
+<ul>
+ 	<li>تعتبر ديكورات المطاعم أحد أسهل الطرق وأكثرها تكلفة لتغيير مظهر منطقة تناول الطعام الخاصة بمكانك.</li>
+ 	<li>يمكن أن يمنح تغيير الألوان على الجدران الخاصة بك لعملائك تجربة جلوس وجو مختلف تمامًا.</li>
+ 	<li>يمكنك القيام بالطلاء أنت وفريقك إذا كنت تعاني من مشاكل مادية ولا يمكنك تعيين شخص محترف.</li>
+ 	<li> قبل أن تبدأ في الطلاء، يجب عليك أولاً اختيار نظام ألوان يكمل مفهوم المطعم الخاص بك ويلائم علامتك التجارية.</li>
+ 	<li>بدلاً من طلاء مساحة تناول الطعام بالكامل، يمكنك استخدام جدار واحد وطلائة بلون مختلف عن الألوان المحايدة لتحسين الشكل النهائي للغرفة وإحداث تباين مع الجدران الأخرى.</li>
+ 	<li>يمكنك الاستعانه ببعض الرسوم والنقوشات الحديثة على هذا الجدار مع ألوان ساطعة تجذب انتباه رواد مطعمك، وتمنح المكان مظهرًا أكثر حداثة.</li>
+ 	<li>تتبع العديد من المطاعم طريقة التصميم الحديثة في السنوات الأخيرة كونها لا تطلب إنفاق مبالغ هائلة من المال كما أنها تدوم لبضع سنوات دون الحاجة للتغير المستمر.</li>
+ 	<li><strong>ضيافه بزنس متخصصون تصميم وتنفيذ المطاعم والكافيهات بخبرة السلاسل العالميه.</strong></li>
+</ul>
+</li>
+</ul>
+<h3 style="padding-right: 80px;">2. إضافة النباتات إلى المساحة الخاصة بك أسس تصميم المطاعم والكافيهات 2023</h3>
+<p style="padding-right: 80px;">إضافة النباتات إلى مساحة تناول الطعام الخاصة بك يمكن أن تجلب أجواء هادئة، ومنعشة، وتدفق من الألوان الطبيعية إلى المنطقة الأمامية للمكان. ولكن، لا يجب استخدام نباتات حقيقية لأن الحفاظ عليها سيكلف الكثير من المال، كما أنها قد تسبب الحساسية لدى العملاء، وتخلق روائح يمكن أن تتعارض مع روائح طعامك.</p>
+<p style="padding-right: 80px;">إذا كنت ترغب في استخدام نباتات حقيقية، فإن الصبار بعتبر من الخيارات الممتازة حيث يمكن العناية بها بسهولة ولا تنبعث منها أي رائحة. بالإضافة إلى ذلك، هناك الكثير من النباتات المزيفة والتي تتمتع بشكل رائع ومميز يمكنك الاستعانة بها لتزيين مساحتك.</p>
+
+<h3 style="padding-right: 80px;">3. لماذا لا تستعين بالأعمال الفنية؟</h3>
+<ul>
+ 	<li style="list-style-type: none;">
+<ul>
+ 	<li>إذا كنت تبحث عن مظهر فني ومعاصر، فإن تعليق بعض الأعمال الفنية في مساحة الطعام الخاصة بك يعد فكرة ممتازة. يمكن أن يكون العمل الفني المستخدم في ديكورات المطاعم أي شيء، بدءًا من الصور الفوتوغرافية إلى اللوحات الفنية. وحتى الفن ثلاثي الأبعاد والمنحوتات.</li>
+ 	<li>يمكنك أيضا إضافة لمستك الشخصية على هذه الأعمال الفنية.</li>
+ 	<li> يمكنك الاستعانة بأعمال الفنانين المحليين في منطقتك ومنح العملاء خيار شرائها , لجذب بعض العملاء أو  فئة معينة من العملاء .</li>
+ 	<li>بهذه الطريقة تحصل على فن جميل لتعلقه في مطعمك، كما أنك تساعد مجتمع الفن المحلي.</li>
+ 	<li>إذا كان مطعمك يقدم مطبخ معين أو دولة محددة، فإن عرض الصور واللوحات الفنية للمناظر الطبيعية والمعالم الشهيرة في تلك المنطقة هو طريقة رائعة لمنح مطعمك إحساسًا بالأصالة ووضع رواد المطعم في جو مميز لاختبار التجربة كاملة.</li>
+</ul>
+</li>
+</ul>
+<h3 style="padding-right: 80px;">4. لا تنفق أموالك على مفارش المائدة  أسس تصميم المطاعم والكافيهات 2023 :</h3>
+<ul>
+ 	<li style="list-style-type: none;">
+<ul>
+ 	<li>في السنوات الماضية، أعطت مفارش المائدة للعملاء انطباعًا عن الطعام الفاخر والأناقة.</li>
+ 	<li>في الوقت الحاضر، لم تعد مفارش المائدة شيئا هاما يجب تضمينة ضمن قائمة ديكورات المطاعم.</li>
+ 	<li>على الجانب الآخر يتم استخدام طاولات خشبية عارية، والتي تتناسب مع الحد الأدنى من الجمال، تتناسب موضة التصميم هذه مع وسائل التواصل الاجتماعي وخاصة إنستجرام.</li>
+ 	<li>إذا كنت تفكر في كيف تقوم بتزين طاولاتك فتخلى عن مفارش الطاولة بالتأكيد؛ صيانتها باهظة الثمن لأنها تحتاج إلى غسلها واستبدالها باستمرار.</li>
+ 	<li>إذا كنت ترغب في منح عملائك شعورًا مماثلًا بالأناقة، يمكنك استخدام المناديل القماشية.</li>
+ 	<li>الأمر الوحيد الذي يمكن يمكن أن تساعد فيه مفارش الطاولة هو حماية سطح طاولتك من الخدوش والبقع التي تسببها أواني الطعام أو أدوات المائدة. لذا من الأفضل انتقاء طاولاتك بعانية من أجود الخامات.</li>
+ 	<li><strong>ضيافه بزنس متخصصون تصميم وتنفيذ المطاعم والكافيهات بخبرة السلاسل العالميه.</strong></li>
+</ul>
+</li>
+</ul>
+&nbsp;
+
+<figure id="attachment_1623" aria-describedby="caption-attachment-1623" style="width: 500px" class="wp-caption aligncenter"><img decoding="async" class="wp-image-1623" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20282'%3E%3C/svg%3E" alt="أسس تصميم ديكورات المطاعم" width="500" height="282" data-lazy-srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2.jpg 800w, https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2-300x169.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2-150x85.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2-768x433.jpg 768w, https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2-24x14.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2-36x20.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2-48x27.jpg 48w" data-lazy-sizes="(max-width: 500px) 100vw, 500px" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2.jpg" /><noscript><img decoding="async" class="wp-image-1623" src="https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2.jpg" alt="أسس تصميم ديكورات المطاعم" width="500" height="282" srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2.jpg 800w, https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2-300x169.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2-150x85.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2-768x433.jpg 768w, https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2-24x14.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2-36x20.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/See-The-Best-Design-Restaurants-In-France-2-48x27.jpg 48w" sizes="(max-width: 500px) 100vw, 500px" /></noscript><figcaption id="caption-attachment-1623" class="wp-caption-text">أسس تصميم ديكورات المطاعم</figcaption></figure>
+<h3 style="padding-right: 80px;">5. أسس تصميم المطاعم والكافيهات 2023 استخدم الضوء بشكل مميز</h3>
+<ul>
+ 	<li style="list-style-type: none;">
+<ul>
+ 	<li>يمكن أن يكون لتغيير الإضاءة وكمية الضوء في ديكورات مطعمك تأثير كبير على الجو العام.</li>
+ 	<li>يمنح المزيد من الإضاءة مكانك جوًا مشرقًا وترحيبيًا، في حين تضفي مساحة تناول الطعام الباهتة إحساسًا أكثر حميمية ورومانسية.</li>
+ 	<li>هناك طرق مختلفة يمكنك من خلالها تغيير كمية الضوء في مساحة تناول الطعام الخاصة بك.</li>
+ 	<li>على سبيل المثال؛ تخلق الإضاءة المزاجية والأضواء المعلقة والمصابيح المعلقة إضاءة ناعمة ومنتشرة، بينما تساعد الشموع في إبراز الجو الرومانسي.</li>
+ 	<li>يمكنك أيضًا ضبط الإضاءة الطبيعية القادمة إلى منطقة تناول الطعام الخاصة بك بالستائر والستائر المعتمة.</li>
+ 	<li>لا يمكن للستائر فقط تغيير كمية الضوء القادمة إلى مطعمك، ولكن يمكنها أيضًا توفير مجموعة من الألوان والذوق الزخرفي الذي يمكنك استخدامه لتتناسب مع نظام الألوان بالمكان.</li>
+ 	<li>يمكنك اختيار نوع الإضاءة الخاصة بمطعمك بناء على مفهوم المكان والرسالة التي ترغب أن يتلاقها عملاؤك.</li>
+</ul>
+</li>
+</ul>
+&nbsp;
+<ul>
+ 	<li><strong> ضيافه بزنس متخصصون تصميم وتنفيذ المطاعم والكافيهات بخبرة السلاسل العالميه.</strong></li>
+</ul>
+<figure id="attachment_1618" aria-describedby="caption-attachment-1618" style="width: 500px" class="wp-caption aligncenter"><img decoding="async" class="wp-image-1618" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20336'%3E%3C/svg%3E" alt="ديكورات المطاعم" width="500" height="336" data-lazy-srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4.jpg 700w, https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4-300x201.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4-150x101.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4-24x16.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4-36x24.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4-48x32.jpg 48w" data-lazy-sizes="(max-width: 500px) 100vw, 500px" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4.jpg" /><noscript><img decoding="async" class="wp-image-1618" src="https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4.jpg" alt="ديكورات المطاعم" width="500" height="336" srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4.jpg 700w, https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4-300x201.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4-150x101.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4-24x16.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4-36x24.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/e1dd559075e32d31a78f8a4f1a694fd4-48x32.jpg 48w" sizes="(max-width: 500px) 100vw, 500px" /></noscript><figcaption id="caption-attachment-1618" class="wp-caption-text">ديكورات المطاعم</figcaption></figure>
+<h3 style="padding-right: 80px;">6. إعادة تصميم القائمة الخاصة بك ديكور مطعم أسس تصميم المطاعم بأنواعها :</h3>
+<ul>
+ 	<li style="list-style-type: none;">
+<ul>
+ 	<li>قد يكون تصميم القائمة لايتم الاهتمام بها في ديكورات المطاعم بالرغم من أهميتها ،  نظرا لتأثيرها الكبير على كيفية إدراك عملائك لنمط الطعام الذي تقدمه.</li>
+ 	<li> القوائم القديمة مع الأغلفة المتهالكة انطباع رديئ ورخيص عن مطعمك.</li>
+ 	<li>أيضا ابتعد من نسخ أفكار الآخرين وتقليدها؛ بدلاً من طباعة قائمتك على ورق قائمة مصمم مسبقًا،</li>
+ 	<li>يمكنك إنشاء تصميم فريد خاص بك باستخدام برنامج تصميم مجاني.</li>
+ 	<li>أما إذا كنت تريد قائمة ذات مظهر أكثر احترافًا وتعكس مفهوم مطعمك،</li>
+ 	<li>يمكنك الاستعانة بفريق نصميم <a href="https://deyafabusiness.com/">ضيافة بيزنس</a> والذي يحرص على توصيل رؤية مطعمك والأطباق والمشروبات التي تقدمها في أفضل صورة.</li>
+ 	<li>لا تنس إقران قائمتك الجديدة والمحسّنة بغطاء قائمة أنيق لإكمال المظهر وحماية الورق من التلف والبقع.</li>
+</ul>
+</li>
+</ul>
+<h3 style="padding-right: 80px;">7. تحديث أدوات الخدمة وأدوات المائدة</h3>
+<ul>
+ 	<li style="list-style-type: none;">
+<ul>
+ 	<li>هل لأدوات الخدمة والمائدة علاقة بديكورات المطاعم؟</li>
+ 	<li>سؤال قد يطرحه الكثيرين ممن يفتتحون مكانا جديدا، والإجابة هي نعم بالتأكيد.</li>
+ 	<li>يمكن أن تؤثر القطع التي تقدم طعامك عليها على تصور العملاء لمطعمك.</li>
+ 	<li>مثال: إذا كنت تستخدم ألواح خزف قديمة بها خدوش على السطح، فسوف ينعكس ذلك بشكل سيء على عملاؤك.</li>
+ 	<li>قد تحجم بعض المطاعم عن تغيير أواني الطعام وأدوات التقديم  لأنها باهظة الثمن، ولكن هناك خيارات ميسورة التكلفة.</li>
+</ul>
+</li>
+</ul>
+<h3 style="padding-right: 80px;">8. تقسيم وتوزيع مساحة الجلوس</h3>
+<ul>
+ 	<li style="list-style-type: none;">
+<ul>
+ 	<li>لن ينتهي تصميم مطعمك بطلاء الجدران أو وضع عدد من نباتات الزينة،</li>
+ 	<li>يجب أن يشعر عملاؤك بالراحة والخصوصية أثناء الجلوس وتناول الطعام.</li>
+ 	<li>لذا الموازنة بين المساحات الفارغة وأماكن الجلوس هي أمر بالغ الأهمية عند تصميم ديكورات المطاعم.</li>
+ 	<li>اعتمادًا على نوع المطعم ، يجب أن تقرر هل تريد التركيز على زيادة عدد الزوار إلى الحد الأقصى أو خلق جو مريح وممتع.</li>
+ 	<li>أيا كان خيارك فتجنب تكديس عملائك في مساحة واحدة ضيقة، واترك مساحة كافية للخوادم للتنقل بسهولة ومنح العملاء الخصوصية اللازمة.</li>
+ 	<li>إذا أمكن، حاول تجنب وضع أماكن الجلوس في المناطق التي بها مشاكل مثل؛ المدخل، وأمام المطبخ، وأمام الحمامات.</li>
+</ul>
+</li>
+</ul>
+<h2 style="padding-right: 80px;"><span style="font-size: 16px;">9. أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه</span></h2>
+<strong>    ضيافه بزنس متخصصون تصميم وتنفيذ المطاعم والكافيهات بخبرة السلاسل العالميه.</strong>
+<h2 style="padding-right: 80px;"><span style="font-size: 16px;">خصص جزء من ديكورات المطعم للبار :</span></h2>
+<ul>
+ 	<li style="list-style-type: none;">
+<ul>
+ 	<li>إذا كان لديك مساحة كافية، فقد يكون من الجيد تضمين بار لمشروبات القهوه الساخنه والبارده بأنواعها أو للعصائر والكوكتيلات الصحيه .</li>
+ 	<li>إنها طريقة رائعة لزيادة أرباحك،  فالنسبة لمعظم المطاعم تتمثل مبيعات المشروبات حوالي 30٪ من العائدات.</li>
+ 	<li>إذا كانت منطقة البار الخاصة بمطعمك تبدو وكأنها إضافة جذابة وشقية، ستساعدك في جذب فئة أخرى من العملاء لمكانك.</li>
+ 	<li>يمكنك الاستعانة بخبرة <a href="https://deyafabusiness.com/servicess/%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/">ضيافة بيزنس</a> لتخصيص تصميم بار ملائم لمساحة ومضمون المطعم الخاص بك.</li>
+</ul>
+</li>
+</ul>
+<h3 style="padding-right: 80px;">10. الموسيقى والصوت جزء من ديكورات المطاعم</h3>
+<p style="padding-right: 80px;">الموسيقى هي عامل يمكن أن يجعل أجواءك ممتعة أو يمكن أن تفكك أي مشهد للأجواء وتتسبب في خلق جو ممل داخل المكان.</p>
+<p style="padding-right: 80px;">هل زرت من قبل مطعمًا به موسيقى سيئة حيث يكاد يكون من المستحيل إجراء محادثة؟</p>
+<p style="padding-right: 80px;">أظهر <a href="https://www.jstor.org/stable/2489234?seq=1#page_scan_tab_contents">عدد من الدراسات</a> أن موسيقى الخلفية الهادئة لا تجعل الموظفين أكثر سعادة فحسب، بل تحسن أيضًا صورة المكان وتحفز شهية العملاء.</p>
+&nbsp;
+
+<figure id="attachment_1634" aria-describedby="caption-attachment-1634" style="width: 500px" class="wp-caption aligncenter"><img decoding="async" class="wp-image-1634" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20331'%3E%3C/svg%3E" alt="أسس تصميم المطاعم بأنواعها" width="500" height="331" data-lazy-srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf.jpg 700w, https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf-300x198.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf-150x99.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf-24x16.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf-36x24.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf-48x32.jpg 48w" data-lazy-sizes="(max-width: 500px) 100vw, 500px" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf.jpg" /><noscript><img decoding="async" class="wp-image-1634" src="https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf.jpg" alt="أسس تصميم المطاعم بأنواعها" width="500" height="331" srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf.jpg 700w, https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf-300x198.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf-150x99.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf-24x16.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf-36x24.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/cdn.cliqueinc.com__cache__posts__185819__dining-room-decor-tips-restaurants-185819-1524572699361-main.700x0c-494a7f97497c42068a9432bf84e81bcf-48x32.jpg 48w" sizes="(max-width: 500px) 100vw, 500px" /></noscript><figcaption id="caption-attachment-1634" class="wp-caption-text">أسس تصميم المطاعم بأنواعها</figcaption></figure>
+
+&nbsp;
+<h3 style="padding-right: 80px;">11. أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه</h3>
+<h3 style="padding-right: 80px;">يونيفورم العاملين والمطبخ أيضا جزء من الديكور أسس تصميم المطاعم بأنواعها</h3>
+<ul>
+ 	<li style="list-style-type: none;">
+<ul>
+ 	<li>ديكور مطعم أسس تصميم المطاعم بأنواعها , فى معظم الأحيان  ما يتم التغاضي عن هذا في تصميم المطعم لأنه مخفي عن أعين الجمهور (ما لم يكن مطعمًا ذو مفهوم مطبخ مفتوح، والذي أصبح مشهورًا).</li>
+ 	<li>ربما يكون تصميم مطبخك هو أهم جزء في تصميم مطعمك:</li>
+ 	<li>تقترح مجلة Total Food Service تخصيص 30٪ إلى 40٪ من مساحتك لمطبخك للسماح بإعداد وتجهيز الطعام  والطهي ومساحة حره للحركة .</li>
+ 	<li> نريد أن نناقش بإيجاز ثلاثة خيارات لتصميم المطبخ: Line و Island و Zone.</li>
+ 	<li>يوفر الخيار الأول Line للعمال ثلاث مناطق متميزة لإنتاج الطعام، مما يبقي الموظفين في أماكن عمل محددة.</li>
+ 	<li>أما الخيار الثاني وهو Island فمخصص للعمليات التي تقع في وسط الغرفة، وهي مثالية للمساحات التي تتطلب الإشراف بين الموظفين.</li>
+ 	<li>إذا كانت لديك مساحة محدودة، فقد ترغب في التفكير في الخيار الثالث Zone، والذي يمكن تكييفه مع مجموعة متنوعة من الأشكال والأحجام.</li>
+</ul>
+</li>
+</ul>
+<ul>
+ 	<li style="list-style-type: none;">
+<ul>
+ 	<li>يؤجل العديد من مالكي المطاعم تحديث ديكورات المطاعم لأنهم يعتقدون أنه ينطوي على عمليات تجديد صعبة ومكلفة، ولكن ببساطة عن طريق تغيير بعض الأشياء الصغيرة في مطعمك.</li>
+ 	<li>   يمكنك تغيير طريقة رؤية العملاء لمطعمك بشكل جذري. على سبيل المثال:</li>
+ 	<li>طلاء جدرانك بلون أكثر إشراقًا</li>
+ 	<li>أو إضافة ستائر جديدة يمكن أن يجلب المزيد من الضوء والحيوية إلى غرفة الطعام الخاصة بك،</li>
+ 	<li>أو يمكن أن تضفي القوائم الجديدة مظهرًا جديدًا على مكانك. لذلك، إذا كنت تضع هذه النصائح في الاعتبار ، فيمكنك تحسين مظهر وتصميم مطعمك بشكل كبير.</li>
+</ul>
+</li>
+</ul>
+<h4 style="padding-right: 40px;">12 &#8211; الخبره تلعب الدور الأساسى فى النجاح :</h4>
+<p style="padding-right: 40px;">       لاتبخل على مشروعك بالخبره , ستوفر الكثير من المال وتتجنب المشاكل وتدفع مشروعك نحو النجاح , يمكنك الاستعانه بخبراتنا فى ضيافه بزنس لتصميم وتنفيذ مشروع ناجح.</p>
+
+<ul>
+ 	<li><strong>ضيافه بزنس متخصصون تصميم وتنفيذ المطاعم والكافيهات بخبرة السلاسل العالميه.</strong></li>
+</ul>
+<p style="text-align: center;"> &#8211; <strong>شركة أنجاز جروب (ضيافه بزنس ) شركه مسجله فى <a href="https://invoicing.eta.gov.eg/">بوابة الفواتير الألكترونيه الحكوميه</a>  , ويتم أصدار فاتورة الكترونيه معتمده رسميا باسم الشركه أو العميل وأرسالها الى العملاء وذلك لجميع الخدمات المقدمه للعملاء. </strong></p>
+<p style="padding-right: 40px; text-align: center;"><span style="color: #0000ff;"><strong><a style="color: #0000ff;" href="https://deyafabusiness.com/contact-us/">أبدا مشروعك</a></strong></span></p>
+<p style="text-align: center;"><span style="font-size: 18px;"><strong><span style="color: #0000ff;"><a style="color: #0000ff;" href="https://deyafabusiness.com/contact-us/">أتصل بنا</a></span> </strong></span></p>
+<p style="text-align: center;"><span style="font-size: 14px;"> </span></p>
+
+
+<figure id="attachment_2665" aria-describedby="caption-attachment-2665" style="width: 360px" class="wp-caption aligncenter"><img decoding="async" class="wp-image-2665 " src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20360%20179'%3E%3C/svg%3E" alt="للشركات السعوديه" width="360" height="179" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2022/02/صورة-التمثيل-التجارى-2-300x149.jpg" /><noscript><img decoding="async" class="wp-image-2665 " src="https://deyafabusiness.com/wp-content/uploads/2022/02/صورة-التمثيل-التجارى-2-300x149.jpg" alt="للشركات السعوديه" width="360" height="179" /></noscript><figcaption id="caption-attachment-2665" class="wp-caption-text">التمثيل التجارى لشركة ضيافه بزنس</figcaption></figure>
+<p style="padding-right: 40px;"><span style="color: #0000ff;"><a style="color: #0000ff;" href="https://deyafabusiness.com/servicess/%d8%a3%d8%af%d8%a7%d8%b1%d8%a9-%d9%88%d8%aa%d8%b4%d8%ba%d9%8a%d9%84-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/">ادارة وتشغيل المطاعم والكافيهات</a></span></p>
+<p style="padding-right: 40px;"><span style="color: #0000ff;"><a style="color: #0000ff;" href="https://deyafabusiness.com/servicess/%d8%a7%d9%84%d9%81%d8%b1%d8%a7%d9%86%d8%b4%d8%a7%d9%8a%d8%b2-%d8%a7%d9%84%d8%a7%d9%85%d8%aa%d9%8a%d8%a7%d8%b2-%d8%a7%d9%84%d8%aa%d8%ac%d8%a7%d8%b1%d9%89/">الفرنشايز للمطاعم والكافيهات ( الامتياز التجارى)</a></span></p>
+<p style="padding-right: 40px;"><span style="color: #0000ff;"><a style="color: #0000ff;" href="https://deyafabusiness.com/servicess/%d8%aa%d8%b7%d9%88%d9%8a%d8%b1-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/">تطوير المطاعم و الكافيهات</a></span></p>
+<p style="padding-right: 40px;"><span style="color: #0000ff;"><a style="color: #0000ff;" href="https://deyafabusiness.com/servicess/%d8%a7%d9%84%d8%aa%d8%af%d8%b1%d9%8a%d8%a8/">خدمات التدريب للمطاعم و الكافيهات المتخصصه</a></span></p>
+<p style="padding-right: 40px;"><span style="color: #0000ff;"><a style="color: #0000ff;" href="https://deyafabusiness.com/servicess/%d8%af%d9%84%d9%8a%d9%84-%d8%a7%d9%84%d8%aa%d8%b4%d8%ba%d9%8a%d9%84/">دليل التشغيل للمطاعم و الكافيهات كيف نساعدك في ذلك</a></span></p>
+<p style="padding-right: 40px;"><span style="color: #0000ff;"><a style="color: #0000ff;" href="https://deyafabusiness.com/servicess/%d8%a7%d9%84%d9%85%d9%88%d8%a7%d8%b1%d8%af-%d8%a7%d9%84%d8%a8%d8%b4%d8%b1%d9%8a%d9%87-%d9%88%d8%a7%d9%84%d8%aa%d9%88%d8%b8%d9%8a%d9%81/">وظائف الضيافه الموارد البشريه والتوظيف</a></span></p>
+<p style="padding-right: 40px;"><span style="color: #0000ff;"><a style="color: #0000ff;" href="https://deyafabusiness.com/servicess/%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/">تصميم ديكور المطاعم والكافيهات خدمة مميزة</a></span></p>
+<p style="padding-right: 40px;"><span style="color: #0000ff;"><a style="color: #0000ff;" href="https://deyafabusiness.com/servicess/%d8%af%d8%b1%d8%a7%d8%b3%d8%a9-%d8%a7%d9%84%d8%ac%d8%af%d9%88%d9%89/">دراسه جدوى مشروع مطعم أو كافيه</a></span></p>
+<p style="padding-right: 40px;"><span style="color: #0000ff;"><a style="color: #0000ff;" href="https://www.facebook.com/ingaz99">صفحة الفيس بوك</a></span></p>
+<p style="padding-right: 40px;"></p><div class='apss-social-share apss-theme-4 clearfix apss_font_awesome_five' >
+					<div class='apss-facebook apss-single-icon'>
+						<a rel='nofollow'  title="Share on Facebook" target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/'>
+							<div class='apss-icon-block clearfix'>
+								<i class='fab fa-facebook-f'></i>
+								<span class='apss-social-text'>Share on Facebook</span>
+								<span class='apss-share'>Share</span>
+							</div>
+													</a>
+					</div>
+								<div class='apss-twitter apss-single-icon'>
+					<a rel='nofollow'  href="https://twitter.com/intent/tweet?text=%D8%A3%D8%B3%D8%B3%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D8%B7%D8%A7%D8%B9%D9%85%20%D9%88%D8%A7%D9%84%D9%83%D8%A7%D9%81%D9%8A%D9%87%D8%A7%D8%AA%202023%20%D9%81%D9%89%20%D9%85%D8%B5%D8%B1%20%D9%88%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D9%87&#038;url=https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/&#038;"  title="Share on Twitter" target='_blank'>
+						<div class='apss-icon-block clearfix'>
+							<i class='fab fa-twitter'></i>
+							<span class='apss-social-text'>Share on Twitter</span><span class='apss-share'>Tweet</span>
+						</div>
+											</a>
+				</div>
+				
+				<div class='apss-pinterest apss-single-icon'>
+					<a rel='nofollow' title="Share on Pinterest" href='javascript:pinIt();'>
+						<div class='apss-icon-block clearfix'>
+							<i class='fab fa-pinterest'></i>
+							<span class='apss-social-text'>Share on Pinterest</span>
+							<span class='apss-share'>Share</span>
+						</div>
+						
+					</a>
+				</div>
+								<div class='apss-linkedin apss-single-icon'>
+					<a rel='nofollow'  title="Share on LinkedIn" target='_blank' href='http://www.linkedin.com/sharing/share-offsite/?url=https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/'>
+						<div class='apss-icon-block clearfix'><i class='fab fa-linkedin'></i>
+							<span class='apss-social-text'>Share on LinkedIn</span>
+							<span class='apss-share'>Share</span>
+						</div>
+					</a>
+				</div>
+								<div class='apss-email apss-single-icon'>
+					<a rel='nofollow' class='share-email-popup' title="Share it on Email" target='_blank' href='mailto:?subject=Please%20visit%20this%20link%20https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/&#038;body=Hey%20Buddy!,%20I%20found%20this%20information%20for%20you:%20%D8%A3%D8%B3%D8%B3%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D8%B7%D8%A7%D8%B9%D9%85%20%D9%88%D8%A7%D9%84%D9%83%D8%A7%D9%81%D9%8A%D9%87%D8%A7%D8%AA%202023%20%D9%81%D9%89%20%D9%85%D8%B5%D8%B1%20%D9%88%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D9%87.%20Here%20is%20the%20website%20link:%20https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/.%20Thank%20you.'>
+						<div class='apss-icon-block clearfix'>
+							<i class='fas fa-envelope'></i>
+							<span class='apss-social-text'>Send email</span>
+							<span class='apss-share'>Mail</span>
+						</div>
+					</a>
+				</div>
+
+				</div>                                
+                                <div class="blog-details-meta">
+                                    <div class="share float-none">
+                                        <ul>
+                                            	<div class='apss-social-share apss-theme-4 clearfix apss_font_awesome_five'>
+										<div class='apss-facebook apss-single-icon'>
+							<a rel='nofollow'  title="Share on Facebook" target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/'>
+								<div class='apss-icon-block clearfix'>
+									<i class='fab fa-facebook-f'></i>
+									<span class='apss-social-text'>Share on Facebook</span>
+									<span class='apss-share'>Share</span>
+								</div>
+															</a>
+						</div>
+										<div class='apss-twitter apss-single-icon'>
+						<a rel='nofollow'  href="https://twitter.com/intent/tweet?text=%D8%A3%D8%B3%D8%B3%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D8%B7%D8%A7%D8%B9%D9%85%20%D9%88%D8%A7%D9%84%D9%83%D8%A7%D9%81%D9%8A%D9%87%D8%A7%D8%AA%202023%20%D9%81%D9%89%20%D9%85%D8%B5%D8%B1%20%D9%88%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D9%87&#038;url=https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/&#038;"  title='Share on Twitter' target='_blank'>
+							<div class='apss-icon-block clearfix'>
+								<i class='fab fa-twitter'></i>
+								<span class='apss-social-text'>Share on Twitter</span><span class='apss-share'>Tweet</span>
+							</div>
+													</a>
+					</div>
+										<div class='apss-pinterest apss-single-icon'>
+						<a rel='nofollow' title='Share on Pinterest' href='javascript:pinIt();'>
+							<div class='apss-icon-block clearfix'>
+								<i class='fab fa-pinterest'></i>
+								<span class='apss-social-text'>Share on Pinterest</span>
+								<span class='apss-share'>Share</span>
+							</div>
+													</a>
+					</div>
+										<div class='apss-linkedin apss-single-icon'>
+						<a rel='nofollow'  title='Share on LinkedIn' target='_blank' href='http://www.linkedin.com/sharing/share-offsite/?url=https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/'>
+							<div class='apss-icon-block clearfix'><i class='fab fa-linkedin'></i>
+								<span class='apss-social-text'>Share on LinkedIn</span>
+								<span class='apss-share'>Share</span>
+							</div>
+						</a>
+					</div>
+										<div class='apss-email apss-single-icon'>
+						<a rel='nofollow' class='share-email-popup' title='Share it on Email' target='_blank' href='mailto:?subject=Please%20visit%20this%20link%20https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/&#038;body=Hey%20Buddy!,%20I%20found%20this%20information%20for%20you:%20%D8%A3%D8%B3%D8%B3%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D8%B7%D8%A7%D8%B9%D9%85%20%D9%88%D8%A7%D9%84%D9%83%D8%A7%D9%81%D9%8A%D9%87%D8%A7%D8%AA%202023%20%D9%81%D9%89%20%D9%85%D8%B5%D8%B1%20%D9%88%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D9%87.%20Here%20is%20the%20website%20link:%20https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/.%20Thank%20you.'>
+							<div class='apss-icon-block clearfix'>
+								<i class='fas fa-envelope'></i>
+								<span class='apss-social-text'>Send email</span>
+								<span class='apss-share'>Mail</span>
+							</div>
+						</a>
+					</div>
+							</div>
+		                                            <li class="title">شارك:</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                                            </div>
+                    	                    
+                    </div>                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="side-bar mb-0">
+                            <div class="widget-box search-box">
+                                <form role="search" method="get" class="search-form" action="https://deyafabusiness.com/">
+				<label>
+					<span class="screen-reader-text">البحث عن:</span>
+					<input type="search" class="search-field" placeholder="بحث &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="بحث" />
+			</form>                            </div>
+
+                            <div class="widget-box categories-box">
+                                <h3 class="title">التصنيفات</h3>
+
+                                <ul>
+
+                                	                                			<li><a href="https://deyafabusiness.com/category/%d8%a7%d9%84%d8%aa%d8%b5%d9%86%d9%8a%d9%81-%d8%a7%d9%84%d8%b1%d8%a6%d9%8a%d8%b3%d9%8a/"><i class="fas fa-angle-right"></i> التصنيف الرئيسي</a></li>
+                                			
+                                			                            </div>
+
+                            <div class="widget-box tags-box">
+                                <h3 class="title">الكلمات الدلاليه</h3>
+                            	                            	<div class="dotiano-tags">
+                            	<a href="https://deyafabusiness.com/tag/%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85/" rel="tag">أسس تصميم المطاعم</a> <a href="https://deyafabusiness.com/tag/%d8%a3%d9%81%d9%83%d8%a7%d8%b1-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d9%85%d8%b7%d8%a7%d8%b9%d9%85/" rel="tag">أفكار تصميم مطاعم</a> <a href="https://deyafabusiness.com/tag/%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85/" rel="tag">تصميم المطاعم</a> <a href="https://deyafabusiness.com/tag/%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a8%d8%a7%d8%b1-%d9%83%d8%a7%d9%81%d9%8a%d9%87/" rel="tag">تصميم بار كافيه</a> <a href="https://deyafabusiness.com/tag/%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%af%d9%8a%d9%83%d9%88%d8%b1%d8%a7%d8%aa-%d9%85%d8%b7%d8%a7%d8%b9%d9%85/" rel="tag">تصميم ديكورات مطاعم</a> <a href="https://deyafabusiness.com/tag/%d8%af%d9%8a%d9%83%d9%88%d8%b1%d8%a7%d8%aa-%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa-%d8%ba%d9%8a%d8%b1-%d9%85%d9%83%d9%84%d9%81%d8%a9/" rel="tag">ديكورات كافيهات غير مكلفة</a> <a href="https://deyafabusiness.com/tag/%d8%af%d9%8a%d9%83%d9%88%d8%b1%d8%a7%d8%aa-%d9%85%d8%b7%d8%a7%d8%b9%d9%85-2021/" rel="tag">ديكورات مطاعم 2021</a> <a href="https://deyafabusiness.com/tag/%d8%af%d9%8a%d9%83%d9%88%d8%b1%d8%a7%d8%aa-%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/" rel="tag">ديكورات مطاعم وكافيهات</a> <a href="https://deyafabusiness.com/tag/%d8%b6%d9%8a%d8%a7%d9%81%d9%87-%d8%a8%d8%b2%d9%86%d8%b3-%d9%85%d8%aa%d8%ae%d8%b5%d8%b5%d9%88%d9%86-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d9%88%d8%aa%d9%86%d9%81%d9%8a%d8%b0-%d8%a7%d9%84%d9%85%d8%b7%d8%a7/" rel="tag">ضيافه بزنس متخصصون تصميم وتنفيذ المطاعم والكافيهات بخبرة السلاسل العالميه.</a>                            	</div>
+                            	                            </div>
+
+
+                            <div class="widget-box recent-post-box mb-0">
+                                <h3 class="title">احدث المقالات</h3>
+
+                                <ul>
+                                	
+			                                                        <li>
+                                        <div class="recent-post-thumb">
+                                            <a href="https://deyafabusiness.com/2023/05/10/%d8%a3%d9%81%d9%83%d8%a7%d8%b1-%d8%aa%d8%b3%d9%88%d9%8a%d9%82%d9%8a%d8%a9-%d9%84%d8%b2%d9%8a%d8%a7%d8%af%d8%a9-%d9%85%d8%a8%d9%8a%d8%b9%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88/"><img width="1000" height="712" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%20712'%3E%3C/svg%3E" class="img-fluid wp-post-image" alt="" decoding="async" loading="lazy" data-lazy-srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth.jpg 1000w, https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth-300x214.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth-150x107.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth-768x547.jpg 768w, https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth-24x17.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth-36x26.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth-48x34.jpg 48w" data-lazy-sizes="(max-width: 1000px) 100vw, 1000px" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth.jpg" /><noscript><img width="1000" height="712" src="https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth.jpg" class="img-fluid wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth.jpg 1000w, https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth-300x214.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth-150x107.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth-768x547.jpg 768w, https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth-24x17.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth-36x26.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/coffee-shop-business-growth-48x34.jpg 48w" sizes="(max-width: 1000px) 100vw, 1000px" /></noscript></a>
+                                        </div>
+
+                                        <div class="recent-post-desc">
+                                            <h3><a href="https://deyafabusiness.com/2023/05/10/%d8%a3%d9%81%d9%83%d8%a7%d8%b1-%d8%aa%d8%b3%d9%88%d9%8a%d9%82%d9%8a%d8%a9-%d9%84%d8%b2%d9%8a%d8%a7%d8%af%d8%a9-%d9%85%d8%a8%d9%8a%d8%b9%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88/">أفكار تسويقية لزيادة مبيعات المطاعم والكافيهات</a></h3>
+                                            <span class="date">10/05/2023</span>
+                                        </div>
+                                    </li>
+                                                                        <li>
+                                        <div class="recent-post-thumb">
+                                            <a href="https://deyafabusiness.com/2023/04/20/%d9%81%d8%b1%d8%b5-%d8%a7%d9%84%d8%a7%d8%b3%d8%aa%d8%ab%d9%85%d8%a7%d8%b1-%d9%81%d9%89-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/"><img width="1024" height="713" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20713'%3E%3C/svg%3E" class="img-fluid wp-post-image" alt="دليل تشغيل المطاعم والكافيهات" decoding="async" loading="lazy" data-lazy-srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg 1024w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-300x209.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-150x104.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-768x535.jpg 768w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-24x17.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-36x25.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-48x33.jpg 48w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg" /><noscript><img width="1024" height="713" src="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg" class="img-fluid wp-post-image" alt="دليل تشغيل المطاعم والكافيهات" decoding="async" loading="lazy" srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg 1024w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-300x209.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-150x104.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-768x535.jpg 768w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-24x17.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-36x25.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-48x33.jpg 48w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript></a>
+                                        </div>
+
+                                        <div class="recent-post-desc">
+                                            <h3><a href="https://deyafabusiness.com/2023/04/20/%d9%81%d8%b1%d8%b5-%d8%a7%d9%84%d8%a7%d8%b3%d8%aa%d8%ab%d9%85%d8%a7%d8%b1-%d9%81%d9%89-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa/">فرص الاستثمار فى المطاعم والكافيهات 2023</a></h3>
+                                            <span class="date">20/04/2023</span>
+                                        </div>
+                                    </li>
+                                                                        <li>
+                                        <div class="recent-post-thumb">
+                                            <a href="https://deyafabusiness.com/2023/02/10/%d8%a7%d9%84%d9%81%d8%b1%d9%86%d8%b4%d8%a7%d9%8a%d8%b2-%d9%88%d8%aa%d8%b7%d9%88%d9%8a%d8%b1-%d9%81%d8%b1%d9%86%d8%b4%d8%a7%d9%8a%d8%b2-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84/"><img width="800" height="533" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20533'%3E%3C/svg%3E" class="img-fluid wp-post-image" alt="الفرانشيز للمطاعم" decoding="async" loading="lazy" data-lazy-srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx.jpg 800w, https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx-300x200.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx-150x100.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx-768x512.jpg 768w, https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx-24x16.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx-36x24.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx-48x32.jpg 48w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx.jpg" /><noscript><img width="800" height="533" src="https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx.jpg" class="img-fluid wp-post-image" alt="الفرانشيز للمطاعم" decoding="async" loading="lazy" srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx.jpg 800w, https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx-300x200.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx-150x100.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx-768x512.jpg 768w, https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx-24x16.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx-36x24.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/x414424-8216199759.jpeg.pagespeed.ic_.fwICAPoIJx-48x32.jpg 48w" sizes="(max-width: 800px) 100vw, 800px" /></noscript></a>
+                                        </div>
+
+                                        <div class="recent-post-desc">
+                                            <h3><a href="https://deyafabusiness.com/2023/02/10/%d8%a7%d9%84%d9%81%d8%b1%d9%86%d8%b4%d8%a7%d9%8a%d8%b2-%d9%88%d8%aa%d8%b7%d9%88%d9%8a%d8%b1-%d9%81%d8%b1%d9%86%d8%b4%d8%a7%d9%8a%d8%b2-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84/">الفرنشايز وتطوير فرنشايز المطاعم والكافيهات</a></h3>
+                                            <span class="date">10/02/2023</span>
+                                        </div>
+                                    </li>
+                                                                        <li>
+                                        <div class="recent-post-thumb">
+                                            <a href="https://deyafabusiness.com/2023/01/11/%d8%af%d9%84%d9%8a%d9%84-%d8%aa%d8%b4%d8%ba%d9%8a%d9%84-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d8%a7%d9%84%d9%85%d9%88%d8%a7%d8%b5%d9%81%d8%a7%d8%aa-%d8%a7%d9%84%d8%a7%d8%b3%d8%a7%d8%b3%d9%8a/"><img width="1280" height="884" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20884'%3E%3C/svg%3E" class="img-fluid wp-post-image" alt="دليل التشغيل والوصفات 2023" decoding="async" loading="lazy" data-lazy-srcset="https://deyafabusiness.com/wp-content/uploads/2022/12/26.jpg 1280w, https://deyafabusiness.com/wp-content/uploads/2022/12/26-300x207.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2022/12/26-1024x707.jpg 1024w, https://deyafabusiness.com/wp-content/uploads/2022/12/26-150x104.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2022/12/26-768x530.jpg 768w" data-lazy-sizes="(max-width: 1280px) 100vw, 1280px" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2022/12/26.jpg" /><noscript><img width="1280" height="884" src="https://deyafabusiness.com/wp-content/uploads/2022/12/26.jpg" class="img-fluid wp-post-image" alt="دليل التشغيل والوصفات 2023" decoding="async" loading="lazy" srcset="https://deyafabusiness.com/wp-content/uploads/2022/12/26.jpg 1280w, https://deyafabusiness.com/wp-content/uploads/2022/12/26-300x207.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2022/12/26-1024x707.jpg 1024w, https://deyafabusiness.com/wp-content/uploads/2022/12/26-150x104.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2022/12/26-768x530.jpg 768w" sizes="(max-width: 1280px) 100vw, 1280px" /></noscript></a>
+                                        </div>
+
+                                        <div class="recent-post-desc">
+                                            <h3><a href="https://deyafabusiness.com/2023/01/11/%d8%af%d9%84%d9%8a%d9%84-%d8%aa%d8%b4%d8%ba%d9%8a%d9%84-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d8%a7%d9%84%d9%85%d9%88%d8%a7%d8%b5%d9%81%d8%a7%d8%aa-%d8%a7%d9%84%d8%a7%d8%b3%d8%a7%d8%b3%d9%8a/">دليل تشغيل المطاعم والكافيهات المواصفات الأساسيه</a></h3>
+                                            <span class="date">11/01/2023</span>
+                                        </div>
+                                    </li>
+                                                                        <li>
+                                        <div class="recent-post-thumb">
+                                            <a href="https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/"><img width="1024" height="713" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20713'%3E%3C/svg%3E" class="img-fluid wp-post-image" alt="دليل تشغيل المطاعم والكافيهات" decoding="async" loading="lazy" data-lazy-srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg 1024w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-300x209.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-150x104.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-768x535.jpg 768w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-24x17.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-36x25.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-48x33.jpg 48w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg" /><noscript><img width="1024" height="713" src="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg" class="img-fluid wp-post-image" alt="دليل تشغيل المطاعم والكافيهات" decoding="async" loading="lazy" srcset="https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004.jpg 1024w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-300x209.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-150x104.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-768x535.jpg 768w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-24x17.jpg 24w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-36x25.jpg 36w, https://deyafabusiness.com/wp-content/uploads/2020/09/525494_004-48x33.jpg 48w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript></a>
+                                        </div>
+
+                                        <div class="recent-post-desc">
+                                            <h3><a href="https://deyafabusiness.com/2023/01/10/%d8%af%d9%8a%d9%83%d9%88%d8%b1-%d9%85%d8%b7%d8%b9%d9%85-%d8%a3%d8%b3%d8%b3-%d8%aa%d8%b5%d9%85%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87/">أسس تصميم المطاعم والكافيهات 2023 فى مصر والسعوديه</a></h3>
+                                            <span class="date">10/01/2023</span>
+                                        </div>
+                                    </li>
+                                                                        <li>
+                                        <div class="recent-post-thumb">
+                                            <a href="https://deyafabusiness.com/2022/10/25/%d8%a7%d8%b1%d8%a8%d8%a7%d8%ad-%d9%85%d8%b4%d8%b1%d9%88%d8%b9%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa-%d9%88%d8%b7%d8%b1/"><img width="1280" height="884" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20884'%3E%3C/svg%3E" class="img-fluid wp-post-image" alt="" decoding="async" loading="lazy" data-lazy-srcset="https://deyafabusiness.com/wp-content/uploads/2022/10/18.jpg 1280w, https://deyafabusiness.com/wp-content/uploads/2022/10/18-300x207.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2022/10/18-1024x707.jpg 1024w, https://deyafabusiness.com/wp-content/uploads/2022/10/18-150x104.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2022/10/18-768x530.jpg 768w" data-lazy-sizes="(max-width: 1280px) 100vw, 1280px" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2022/10/18.jpg" /><noscript><img width="1280" height="884" src="https://deyafabusiness.com/wp-content/uploads/2022/10/18.jpg" class="img-fluid wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://deyafabusiness.com/wp-content/uploads/2022/10/18.jpg 1280w, https://deyafabusiness.com/wp-content/uploads/2022/10/18-300x207.jpg 300w, https://deyafabusiness.com/wp-content/uploads/2022/10/18-1024x707.jpg 1024w, https://deyafabusiness.com/wp-content/uploads/2022/10/18-150x104.jpg 150w, https://deyafabusiness.com/wp-content/uploads/2022/10/18-768x530.jpg 768w" sizes="(max-width: 1280px) 100vw, 1280px" /></noscript></a>
+                                        </div>
+
+                                        <div class="recent-post-desc">
+                                            <h3><a href="https://deyafabusiness.com/2022/10/25/%d8%a7%d8%b1%d8%a8%d8%a7%d8%ad-%d9%85%d8%b4%d8%b1%d9%88%d8%b9%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%b7%d8%a7%d8%b9%d9%85-%d9%88%d8%a7%d9%84%d9%83%d8%a7%d9%81%d9%8a%d9%87%d8%a7%d8%aa-%d9%88%d8%b7%d8%b1/">ارباح مشروعات المطاعم والكافيهات وطريقة زيادتها</a></h3>
+                                            <span class="date">25/10/2022</span>
+                                        </div>
+                                    </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog Details Area -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top section-padding" style="
+    background: url('https://deyafabusiness.com/wp-content/uploads/2020/05/footer-bg.png') no-repeat;
+    background-size: cover;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="about-footer">
+                            <img width="200" height="84" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%2084'%3E%3C/svg%3E" alt="ضيافة بيزنس لوجو" class="img-fluid" data-lazy-src="https://deyafabusiness.com/wp-content/uploads/2020/05/logo.png"><noscript><img width="200" height="84" src="https://deyafabusiness.com/wp-content/uploads/2020/05/logo.png" alt="ضيافة بيزنس لوجو" class="img-fluid"></noscript>
+                            <p><p><strong><span style="font-size: 15px;">ضيافه بزنس متخصصون فى تأسيس مشروعات المطاعم والكافيهات بأنواعها ونوظف خبراتنا المكتسبه على مدار سنوات طويله فى تطوير مشروعات ناجحه , وبالاضافه الى خبراتنا فى </span><span style="font-size: 15px;"> أو</span><span style="font-size: 15px;">الادارة والتشغيل &#8211; وهى أهم عناصر النجاح لأى مشروع &#8211; فاننا نوفر أيضا الخدمات الأساسيه المطلوبه دائما للمشروعات سواء للمشروعات الجديده</span><span style="font-size: 15px;"> أو المشروعات القائمه .</span></strong></p>
+</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="quick-links">
+                            <h3>روابط سريعة</h3>
+                            <ul id="menu-footer-menu" class="list-unstyled"><li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://deyafabusiness.com/about-us/">من نحن</a></li>
+<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="https://deyafabusiness.com/services/">خدمات مشروعات المطاعم والكافيهات</a></li>
+<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://deyafabusiness.com/experience-work/">خبراتنا وسابقة أعمالنا</a></li>
+<li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="https://deyafabusiness.com/deyafa-community/">مجتمع الضيافه</a></li>
+<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://deyafabusiness.com/faq/">أسئلة شائعه</a></li>
+</ul>                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-social">
+                            <h2>اتصل بنا</h2>
+                            <ul class="list-unstyled contact">
+								<li><a href="https://deyafabusiness.com/contact-us"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                                <li><i class="fas fa-at"></i>info@deyafabusiness.com</li>
+                            </ul>
+                            <h3>مواقع التواصل الاجتمتاعى</h3>
+							<div style="padding-right: 30px;">
+                            <ul class="list-unstyled social">
+                                                                                                <li class="facebook-color"><a href="https://www.facebook.com/ingaz99"><i class="fab fa-facebook-square"></i></a></li>
+                                                                                                                                <li class="twitter-color"><a href="https://twitter.com/DeyafaBusiness"><i class="fab fa-twitter"></i></a></li>
+                                                            </ul>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="text-center"><p style="text-align: center;"><span style="font-size: 14px; color: #ffffff;">ضيافة بزنس  2010 &#8211; 2023  جميع الحقوق محفوظة لشركة أنجاز جروب</span></p>
+</p>
+            </div>
+        </div>
+    </footer>
+    <!-- // Footer -->
+
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js' defer></script>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-includes/js/masonry.min.js?ver=4.2.2' id='masonry-js' defer></script>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-includes/js/jquery/jquery.masonry.min.js?ver=3.1.2b' id='jquery-masonry-js' defer></script>
+<script id='apss-frontend-mainjs-js-extra'>
+var frontend_ajax_object = {"ajax_url":"https:\/\/deyafabusiness.com\/wp-admin\/admin-ajax.php","ajax_nonce":"48afc8be1e"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://deyafabusiness.com/wp-content/cache/min/1/wp-content/plugins/accesspress-social-share/js/frontend.js?ver=1682173195' id='apss-frontend-mainjs-js' defer></script>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js' defer></script>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script id='contact-form-7-js-extra'>
+var wpcf7 = {"api":{"root":"https:\/\/deyafabusiness.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://deyafabusiness.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1682173195' id='contact-form-7-js' defer></script>
+<script type="rocketlazyloadscript" id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id='rocket-preload-links-js-extra'>
+var RocketPreloadLinksConfig = {"excludeUris":"\/contact-us\/|\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/deyafabusiness.com","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-content/themes/deyafa/js/jquery-1.12.4.min.js?ver=1.0.0' id='deyafa-jq-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://deyafabusiness.com/wp-content/cache/min/1/wp-content/themes/deyafa/js/navigation.js?ver=1682173195' id='deyafa-navigation-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://deyafabusiness.com/wp-content/cache/min/1/wp-content/themes/deyafa/js/skip-link-focus-fix.js?ver=1682173195' id='deyafa-skip-link-focus-fix-js' defer></script>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-content/themes/deyafa/js/popper.min.js?ver=1.0.0' id='deyafa-popper-js' defer></script>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-content/themes/deyafa/js/bootstrap.min.js?ver=1.0.0' id='deyafa-bojs-js' defer></script>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-content/themes/deyafa/js/lightslider.min.js?ver=1.0.0' id='deyafa-lsjs-js' defer></script>
+<script type="rocketlazyloadscript" src='https://deyafabusiness.com/wp-content/themes/deyafa/js/lightgallery.min.js?ver=1.0.0' id='deyafa-lgjs-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://deyafabusiness.com/wp-content/cache/min/1/ajax/libs/waypoints/4.0.1/jquery.waypoints.js?ver=1682173195' id='deyafa-wpo-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://deyafabusiness.com/wp-content/cache/min/1/wp-content/themes/deyafa/js/jquery.rcounterup.js?ver=1682173195' id='deyafa-recount-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://deyafabusiness.com/wp-content/cache/min/1/wp-content/themes/deyafa/js/script.js?ver=1682173195' id='deyafa-script-js' defer></script>
+<script type="rocketlazyloadscript" id='site-reviews-js-before'>
+window.hasOwnProperty("GLSR")||(window.GLSR={});GLSR.action="glsr_action";GLSR.ajaxpagination=["#wpadminbar",".site-navigation-fixed"];GLSR.ajaxurl="https://deyafabusiness.com/wp-admin/admin-ajax.php";GLSR.captcha=[];GLSR.nameprefix="site-reviews";GLSR.starsconfig={"clearable":false,"tooltip":false};GLSR.state={"popstate":false};GLSR.text={closemodal:"Close Modal"};GLSR.urlparameter=false;GLSR.validationconfig={field:"glsr-field",form:"glsr-form","field_error":"glsr-field-is-invalid","field_message":"glsr-field-error","field_required":"glsr-required","field_valid":"glsr-field-is-valid","form_error":"glsr-form-is-invalid","form_message":"glsr-form-message","form_message_failed":"glsr-form-failed","form_message_success":"glsr-form-success","input_error":"glsr-is-invalid","input_valid":"glsr-is-valid"};GLSR.validationstrings={accepted:"This field must be accepted.",between:"This field value must be between %s and %s.",betweenlength:"This field must have between %s and %s characters.",email:"This field requires a valid e-mail address.",errors:"Please fix the submission errors.",max:"Maximum value for this field is %s.",maxlength:"This field allows a maximum of %s characters.",min:"Minimum value for this field is %s.",minlength:"This field requires a minimum of %s characters.",number:"This field requires a number.",pattern:"Please match the requested format.",regex:"Please match the requested format.",required:"This field is required.",tel:"This field requires a valid telephone number.",url:"This field requires a valid website URL (make sure it starts with http or https).",unsupported:"The review could not be submitted because this browser is too old. Please try again with a modern browser."};GLSR.version="6.0.5";
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://deyafabusiness.com/wp-content/cache/min/1/wp-content/plugins/site-reviews/assets/scripts/site-reviews.js?ver=1682173195' id='site-reviews-js' defer></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://deyafabusiness.com/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img loading="lazy" data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script>
+<script type="rocketlazyloadscript">"use strict";var wprRemoveCPCSS=function wprRemoveCPCSS(){var elem;document.querySelector('link[data-rocket-async="style"][rel="preload"]')?setTimeout(wprRemoveCPCSS,200):(elem=document.getElementById("rocket-critical-css"))&&"remove"in elem&&elem.remove()};window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel="stylesheet" href="https://deyafabusiness.com/wp-content/cache/min/1/6c4c99f7317aee1ffa36c426c466e085.css" media="all" data-minify="1" /><link rel='stylesheet' id='apss-font-opensans-css' href='//fonts.googleapis.com/css?family=Open+Sans&#038;ver=6.1.1' media='all' /></noscript></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1684496983 -->

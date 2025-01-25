@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurant Web site Dashboard">
+
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap"rel="stylesheet"> -->
+
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="../css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <title>Dashboard</title>
+
+</head>
+
+<body>
+    <main>
+        <div id="dashboard">
+            <div class="overlay"></div>
+            <div class="dashboard-menu">
+                <h2 class="primary-text">Dashboard</h2>
+                <ul>
+                    <li class="active">Products</li>
+                    <li>Sales Details</li>
+                    <li>Customers</li>
+                    <li><a href="./homepage.html" aria-label="Homepage">Home Page</a></li>
+                </ul>
+            </div>
+            <div class="show-chooise">
+
+                <div class="Products" style="display: block;">
+                    <h2>Products</h2>
+                    <div class="add-section">
+                        <div class="add-category">
+                            <button class="categBTN btn">Add Category</button>
+                            <form id="category-form">
+                                <input type="text" name="category name" placeholder="Add Category" required>
+                                <input type="submit" value="Add" id="addCateg">
+                            </form>
+                        </div>
+                        <div class="add-products">
+                            <button class="prodBTN btn ">Add Products</button>
+                            <form method="post" id="product-form">
+                                <label for="choose-category">Choose Category</label>
+                                <select name="choose-category" id="choose-category">
+                                    <!-- <option value=""></option> -->
+                                </select>
+                                <label id="labelImg" for="getImage">
+                                    Choose a picture <br>
+                                    <img src="../imgs/Add-Image.jfif" alt="Add Image">
+                                </label>
+                                <input type="file" name="Image" id="getImage" accept="image/*" required>
+                                <input type="text" name="name" placeholder="Product Name" required>
+                                <input type="number" name="price" placeholder="Product Price" required>
+                                <textarea type="text" name="description" placeholder="Description" required></textarea>
+                                <input type="submit" value="Add" id="addProdBTN">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="display-products" style="margin-top: 50px;">
+
+                    </div>
+                    <div class="popup-delete">
+                        Are you sure to delete this <span class="deleted-type">Product</span>?
+                        <div class="buttons">
+                            <button id="D-yes">Yes</button>
+                            <button id="D-no">No</button>
+                            <!-- <button id="D-no"
+                                onclick="popupDel.style.display = 'none'; overlay.style.display = 'none';">No</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="Customers" style="display: none;">
+                    <table>
+                        <caption>Customers</caption>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Visit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hmdan Ibrahim</td>
+                                <td>hmdan@gmail.com</td>
+                                <td>01002046876</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Hmdan Ibrahim</td>
+                                <td>hmdan@gmail.com</td>
+                                <td>01002046876</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Hmdan Ibrahim</td>
+                                <td>hmdan@gmail.com</td>
+                                <td>01002046876</td>
+                                <td>3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <button class="go-up">
+            <i class="fa-solid fa-up-long"></i>
+            <br>Go Up
+        </button>
+    </main>
+    <script src="../js/functions.js" type="module"></script>
+    <script src="../js/dashboard.js" type="module"></script>
+</body>
+
+</html>
+
+
+
+<!-- 
+
+
+
+                
+-->
