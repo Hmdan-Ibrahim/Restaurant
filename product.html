@@ -10,10 +10,10 @@
     <!-- <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"> -->
 
     <!-- Font Awesome Library -->
-    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
 
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Reservation</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Product</title>
 
 </head>
 
@@ -43,59 +43,20 @@
                 <input for="search" type="search" placeholder="Search">
                 <button id="search">Search</button>
             </div>
-            <a href="./dashboard.html" class="dashboard" aria-label="Dashboard"><i class="fas fa-dashboard fa-2x"></i></a>
+            <a href="./dashboard.html" class="dashboard" aria-label="Dashboard"><i
+                    class="fas fa-dashboard fa-2x"></i></a>
         </div>
     </header>
     <!-- End Header -->
-
     <main>
-        <section id="Reservation-page">
+        <section id="Product-page">
             <div class="container">
-                <h2>RESERVATION</h2>
-                <form action="" method="post" novalidate target="_blank">
-                    <div class="name">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" required id="name" autofocus>
-                    </div>
-                    <div class="e-mail">
-                        <label for="e-mail">Email</label>
-                        <input type="email" required placeholder="Write a valid email" name="email" id="e-mail">
-                    </div>
-                    <div class="phone">
-                        <label for="phone">Phone</label>
-                        <input type="phone" required name="email" id="phone">
-
-                    </div>
-                    <div class="guests">
-                        <label for="guests">How Many Guests?</label>
-                        <input type="number" required name="email" id="guests" name="Number of Guests" min="1" max="6"
-                            value="1" maxlength="1">
-
-                    </div>
-                    <div class="date">
-                        <label for="date">Date</label>
-                        <input type="date" required name="date" id="date">
-
-                    </div>
-                    <div class="time">
-                        <label for="time">Time</label>
-                        <input type="time" required name="time" id="time">
-
-                    </div>
-                    <div class="message">
-                        <label for="message">Massage</label>
-                        <textarea name="message" id="message"></textarea>
-                    </div>
-
-                    <div class="btns">
-                        <button type="submit">Submit</button>
-                        <button type="reset">Reset</button>
-                    </div>
-                </form>
+                <div class="details">
+                    <h1>Product Details</h1>
+                </div>
             </div>
         </section>
     </main>
-
     <!-- Start Footer -->
     <footer id="footer">
         <div class="container">
@@ -108,7 +69,7 @@
                     01066602606 - 01066676922
                     01004783783
                 </div>
-                <a href="mailto:info@loverrestaurent.com" class="mail" name="email">INFO@LOVERRESTAURANT.COM</a>
+                <a href="mailto:info@loverrestaurent.com" class="mail" aria-label="email">INFO@LOVERRESTAURANT.COM</a>
                 <div class="social">
                     Find Us On Social Networks <br>
                     <a href="www.youtupe.com" aria-label="youtupe"><i class="fab fa-youtube"></i></a>
@@ -122,17 +83,10 @@
                 by <span class="primary-text">Hmdan Ibrahim</span></p>
         </div>
     </footer>
-    <!-- End Footer --><button class="go-up">
-        <i class="fa-solid fa-up-long"></i>
-        <br>Go Up
-    </button>
+    <!-- End Footer -->
 
-    <script src="../js/functions.js" type="module"></script>
-    <script type="module">
-        import {sharedCode} from "../js/functions.js"
-        sharedCode()
-
-    </script>
+    <script src="./js/functions.js" type="module"></script>
+    <script src="./js/product.js" type="module"></script>
 </body>
 
 </html>
