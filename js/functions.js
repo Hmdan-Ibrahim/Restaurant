@@ -93,7 +93,7 @@ function AddClassToShow(itemToShow, displayClass) {
 }
 
 function goUpBTN() {
-    onscroll = () => {
+    window.onscroll = () => {
         document.querySelector(".go-up").style.bottom = scrollY >= 600 ? "40px" : "-80px"
 
     }

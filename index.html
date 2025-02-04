@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Restaurant Web site">
 
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome Library -->
     <link rel="stylesheet" href="./css/all.min.css">
@@ -18,7 +19,10 @@
 </head>
 
 <body>
-
+    <button class="go-up">
+        <i class="fa-solid fa-up-long"></i>
+        <br>Go Up
+    </button>
     <!-- Header -->
     <header>
         <div class="container">
@@ -31,7 +35,7 @@
                 <ul>
                     <li><a href="./products.html" aria-label="Services">Services</a></li>
                     <li><a href="#Menu" aria-label="Menu">Menu</a></li>
-                    <li><a href="/html/about.html" aria-label="About Us">About Us</a></li>
+                    <li><a href="./about.html" aria-label="About Us">About Us</a></li>
                     <li><a href="#footer" aria-label="Contact Us">Contact Us</a></li>
                 </ul>
             </nav>
@@ -40,7 +44,7 @@
                 <input for="search" type="search" placeholder="Search">
                 <button id="search">Search</button>
             </div>
-            <a href="./dashboard.html"  aria-label="Dashboard"><i class="fas fa-dashboard fa-2x"></i></a>
+            <a href="./dashboard.html" aria-label="Dashboard"><i class="fas fa-dashboard fa-2x"></i></a>
         </div>
     </header>
     <!-- Body -->
@@ -81,7 +85,7 @@
                         customers to share every moment with them.
                         We always strive to provide a friendly atmosphere with high-quality food to enjoy our customers.
                     </p>
-                    <a href="./about.html" class="btn btn-primary btn-secondary" aria-label="Learn More About Us">Learn More About Us</a>
+                    <a href="./about.html" class="btn btn-primary btn-secondary" aria-label="Learn More">Learn More</a>
                 </div>
             </div>
         </section>
@@ -105,14 +109,7 @@
                     </ul>
                 </div>
                 <div class="services">
-                    <a href="./product.html" class="product">
-                        <img src="./imgs/food1.png" alt="">
-                        <h3>Salad1</h3>
-                        <div>
-                            <h4>salary: <mark>$25</mark></h4>
-                            <p class="primary-text">Click to show details</p>
-                        </div>
-                    </a>
+                    
                 </div>
             </div>
         </section>
@@ -166,10 +163,6 @@
         </div>
     </footer>
     <!-- End Footer -->
-    <button class="go-up">
-        <i class="fa-solid fa-up-long"></i>
-        <br>Go Up
-    </button>
     <script src="./js/functions.js" type="module"></script>
     <script src="./js/homepage.js" type="module"></script>
 </body>
