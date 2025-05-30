@@ -3,154 +3,150 @@
         "name": "startars",
         "Cheese Quasadilla": {
             "name": "Cheese Quasadilla",
-            "image": "../imgs/Cheese-Quasadilla.jpg",
+            "image": "/imgs/Cheese-Quasadilla.jpg",
             "price": 30,
             "description": "served with your choice of sauce"
         },
         "Chicken Strips": {
             "name": "Chicken Strips",
-            "image": "../imgs/Chicken-Strips-1.jpg",
+            "image": "/imgs/Chicken-Strips-1.jpg",
             "price": 20,
             "description": "served with your choice of sauce"
         },
         "Fish Fingers": {
             "name": "Fish Fingers",
-            "image": "../imgs/Fish-Fingers.jpg",
+            "image": "/imgs/Fish-Fingers.jpg",
             "price": 25,
             "description": "served with your choice of sauce"
         },
         "Fried Calamari": {
             "name": "Fried Calamari",
-            "image": "../imgs/Fried-Calamari.jpg",
+            "image": "/imgs/Fried-Calamari.jpg",
             "price": 25,
             "description": "served with your choice of sauce"
         },
         "Fried Mushroom": {
             "name": "Fried Mushroom",
-            "image": "../imgs/Fried-Mushroom.jpg",
+            "image": "/imgs/Fried-Mushroom.jpg",
             "price": 15,
             "description": "served with your choice of sauce"
         },
         "Fried Mozzarella": {
             "name": "Fried Mozzarella",
-            "image": "../imgs/Fried-Mozzarella.jpg",
+            "image": "/imgs/Fried-Mozzarella.jpg",
             "price": 15,
             "description": "served with your choice of sauce"
         },
         "Fried Shrimp": {
             "name": "Fried Shrimp",
-            "image": "../imgs/Fried-Shrimp.jpg",
+            "image": "/imgs/Fried-Shrimp.jpg",
             "price": 40,
             "description": "served with your choice of sauce"
         },
         "Onion Rings": {
             "name": "Onion Rings",
-            "image": "../imgs/Onion-Rings.jpg",
+            "image": "/imgs/Onion-Rings.jpg",
             "price": 15,
             "description": "served with your choice of sauce"
         },
         "Seafood Combo": {
             "name": "Seafood Combo",
-            "image": "../imgs/Seafood-Combo.jpg",
+            "image": "/imgs/Seafood-Combo.jpg",
             "price": 15,
             "description": "served with your choice of sauce"
         },
         "Spring Rolls": {
             "name": "Spring Rolls",
-            "image": "../imgs/Spring-Rolls.jpg",
+            "image": "/imgs/Spring-Rolls.jpg",
             "price": 15,
             "description": "served with your choice of sauce"
         }
-    }
-,
+    },
     "salads": {
         "name": "salads",
         "Chef Salad": {
             "name": "Chef Salad",
-            "image": "../imgs/Chef-Salad.jpg",
+            "image": "/imgs/Chef-Salad.jpg",
             "price": 50,
             "description": "Chef Salad is One of the main food"
         },
         "Greek Salad": {
             "name": "Greek Salad",
-            "image": "../imgs/Greek-Salad.jpg",
+            "image": "/imgs/Greek-Salad.jpg",
             "price": 30,
             "description": "Greek Salad"
         },
-        "Grilled Chicken Quinoa Salad":{
+        "Grilled Chicken Quinoa Salad": {
             "name": "Grilled Chicken Quinoa Salad",
-            "image": "../imgs/Grilled-Chicken-Quinoa-Salad.jpg",
+            "image": "/imgs/Grilled-Chicken-Quinoa-Salad.jpg",
             "price": 30,
             "description": "Grilled Chicken Quinoa Salad"
         },
-        "Grilled Chicken Caesar":{
+        "Grilled Chicken Caesar": {
             "name": "Grilled Chicken Caesar",
-            "image": "../imgs/Grilled-Chicken-Caesar.jpg",
+            "image": "/imgs/Grilled-Chicken-Caesar.jpg",
             "price": 45,
             "description": "Grilled Chicken Caesar"
         },
-        "Grilled Salmon Caesar":{
+        "Grilled Salmon Caesar": {
             "name": "Grilled Salmon Caesar",
-            "image": "../imgs/Grilled-Salmon-Caesar.jpg",
+            "image": "/imgs/Grilled-Salmon-Caesar.jpg",
             "price": 55,
             "description": "Grilled Salmon Quinoa Salad"
         },
-        "Mix Cheese Salad":{
+        "Mix Cheese Salad": {
             "name": "Mix Cheese Salad",
-            "image": "../imgs/Mix-Cheese-Salad.jpg",
+            "image": "/imgs/Mix-Cheese-Salad.jpg",
             "price": 30,
             "description": "Mix Cheese Salad"
         },
-        "nicoise salad":{
+        "nicoise salad": {
             "name": "Nicoise Salad",
-            "image": "../imgs/Nicoise-Salad.jpg",
+            "image": "/imgs/Nicoise-Salad.jpg",
             "price": 40,
             "description": "Nicoise Salad"
         },
-        "salmon caesar salad":{
+        "salmon caesar salad": {
             "name": "salmon caesar salad",
-            "image": "../imgs/salmon-caesar-salad.jpg",
+            "image": "/imgs/salmon-caesar-salad.jpg",
             "price": 50,
             "description": "salmon caesar salad"
         }
-    }
-,
+    },
     "pasta": {
         "name": "pasta",
         "penne arrabbiata pasta": {
             "name": "penne arrabbiata pasta",
-            "image": "../imgs/Penne-All_Arrabbiata.jpg",
+            "image": "/imgs/Penne-All_Arrabbiata.jpg",
             "price": 35,
             "description": "penne arrabbiata pasta"
         },
         "Grilled Chicken Cheese Pasta": {
             "name": "Grilled Chicken Cheese Pasta",
-            "image": "../imgs/Grilled-Chicken-Cheese-Pasta.jpg",
+            "image": "/imgs/Grilled-Chicken-Cheese-Pasta.jpg",
             "price": 40,
             "description": "Grilled Chicken Cheese Pasta"
         },
         "Grilled Chicken Fettuccine Pasta": {
             "name": "Grilled Chicken Fettuccine Pasta",
-            "image": "../imgs/Grilled-Chicken-Fettuccine.jpg",
+            "image": "/imgs/Grilled-Chicken-Fettuccine.jpg",
             "price": 5,
             "description": "Grilled Chicken Fettuccine Pasta"
         },
         "Grilled Chicken Penne-Pesto-Sauce": {
             "name": "Grilled Chicken Penne-Pesto-Sauce",
-            "image": "../imgs/Grilled-Chicken-Penne-Pesto-Sauce.jpg",
+            "image": "/imgs/Grilled-Chicken-Penne-Pesto-Sauce.jpg",
             "price": 5,
             "description": "Grilled Chicken Penne-Sauce"
         },
         "Grilled Salmon Penne-Sauce Pasta": {
             "name": "Grilled Salmon Penne-Sauce Pasta",
-            "image": "../imgs/Grilled-Salmon-Pasta-Pesto-Sauce.jpg",
+            "image": "/imgs/Grilled-Salmon-Pasta-Pesto-Sauce.jpg",
             "price": 5,
             "description": "Grilled Salmon Penne-Sauce  Pasta"
         }
-    }
-,
-    "any":{
-        "name" :"anyy"
-        
+    },
+    "any": {
+        "name": "anyy"
     }
 }

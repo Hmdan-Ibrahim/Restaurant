@@ -13,7 +13,7 @@ function changeLandingImage(arrImgs, counter) {
     if (counter == arrImgs.length) counter = 0
     else if (counter < 0) counter = arrImgs.length - 1
 
-    welcomeSection.style.backgroundImage = ` url(../imgs/${arrImgs[counter]})`
+    welcomeSection.style.backgroundImage = ` url(/imgs/${arrImgs[counter]})`
     landingCounter = counter
 }
 
@@ -56,7 +56,7 @@ onscroll = function () {
 
     if (scrollY >= servicesSection.offsetTop - 500) {
         if (!isProductDisplayed) {
-            let servicesData = new clsData("../Database/products.txt")
+            let servicesData = new clsData("/database/products.json")
 
             servicesData.loadData().then(response => {
                 displayProducts("startars", servicesData, showServices)
@@ -86,7 +86,7 @@ let counterTestimonial = 0
 addEventListener("scroll", function () {
     if (scrollY >= testimonialsSection.offsetTop - 500) {
         if (!isTestimonialsShow) {
-            fetch("../Database/testimonials.txt").then(response => response.json()).then(testimonials => {
+            fetch("/Database/testimonials.txt").then(response => response.json()).then(testimonials => {
                 displayTestimonial(testimonials[0])
 
                 setInterval(_ => {

@@ -29,7 +29,7 @@ import { AddClassToShow, goUpBTN, clsData } from "./functions.js"
 goUpBTN()
 
 // let dataFromJson = new clsData("../Database/products.txt" , await(await fetch("../Database/products.txt")).json())
-let dataFromJson = new clsData("../Database/products.txt")
+let dataFromJson = new clsData("../Database/products.json")
 
 
 categoryBTN.onclick = _ => {

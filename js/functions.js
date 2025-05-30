@@ -17,7 +17,7 @@ export class clsData {
             request.onload = () => {
                 if (request.readyState == 4 & request.status === 200) {
                     this.data = request.response;
-                    // console.log(this.data)
+                    console.log(request.response)
                     Resolve(this.data)
                 } else {
                     Reject(new Error("Error loading Data" + this.statusText))
@@ -36,6 +36,8 @@ export class clsData {
     }
 
     getProducts(categName) {
+        console.log(this.data);
+        
         return Object.values(this.data[categName]).filter((ele) => ele.name).sort((a, b) => a.name.localeCompare(b.name))
     }
 
