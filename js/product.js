@@ -5,7 +5,7 @@ const productDetails = productPage.querySelector(".details")
 // Shared code in all Pages
 sharedCode()
 
-let servicesData = new clsData("../Database/products.txt")
+let servicesData = new clsData("/Database/products.txt")
 
 const getQueryParams = _ => {
     const params = new URLSearchParams(window.location.search)
