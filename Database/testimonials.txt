@@ -1,22 +1,22 @@
 [
     {
         "username": "Ahmed Hamdy",
-        "image": "/imgs/person1.jfif",
+        "image": "./imgs/person1.jfif",
         "testimonial": "Lover Restaurant is a hidden gem! The ambiance is so romantic, and the food is absolutely divine. Every dish we tried was bursting with flavor. Highly recommend for a special date night!"
     },
     {
         "username": "Ibrahim Ali",
-        "image": "/imgs/person2.jfif",
+        "image": "./imgs/person2.jfif",
         "testimonial": "I can't stop thinking about the amazing meal I had at Lover Restaurant. The service was top-notch, and the attention to detail in every dish was impeccable. A must-visit for all food lovers!"
     },
     {
         "username": "Omran Ahmed",
-        "image": "/imgs/person3.jfif",
+        "image": "./imgs/person3.jfif",
         "testimonial": "Lover Restaurant exceeded all my expectations. From the cozy atmosphere to the delectable menu options, everything was perfect. I will definitely be returning to try more of their mouthwatering dishes!"
     },
     {
         "username": "Mahmoud Mohammed Ali",
-        "image": "/imgs/user-image.jfif",
+        "image": "./imgs/user-image.jfif",
         "testimonial": "Lover Restaurant is a hidden gem! The ambiance is so romantic, and the food is absolutely divine. \"My experience at Lover Restaurant was nothing short of magical. The food was not only delicious but also beautifully presented. The staff was friendly and attentive, making it a memorable dining experience.\"Every dish we tried was bursting with flavor. Highly recommend for a special date night!"
     }
 ]
