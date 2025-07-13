@@ -42,6 +42,7 @@ function getDiscount(mainPrice , discount){
 }
 
 function displayProducts(category, productsFromDB, ProductsContent) {
+    document.head.querySelector("title").innerHTML = category
 
     function createProducts(category, products, displayAllProducts = false) {
         if (products.length > 0) {

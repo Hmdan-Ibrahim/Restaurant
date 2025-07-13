@@ -8,7 +8,7 @@ const productDetails = productPage.querySelector(".details")
 // Shared code in all Pages
 sharedCode()
 
-let servicesData = new clsData("/Database/products.json")
+let servicesData = new clsData("./Database/products.json")
 
 const getQueryParams = _ => {
     const params = new URLSearchParams(window.location.search)
@@ -30,6 +30,8 @@ servicesData.loadData().then( _ => {
 })
 
 function displayProductDetails(product){
+    document.head.querySelector("link[rel='icon']").href = product.image
+
     const imgDiv = document.createElement("div")
     imgDiv.setAttribute("class" , "image")
     productDetails.appendChild(imgDiv)

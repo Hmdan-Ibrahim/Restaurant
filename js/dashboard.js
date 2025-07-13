@@ -1,3 +1,8 @@
+import { AddClassToShow, goUpBTN } from "./utilities/functions.js"
+import { clsData } from "./utilities/classes.js"
+goUpBTN()
+
+
 let dashboardMenu = document.querySelectorAll("#dashboard .dashboard-menu ul li")
 let showChooise = document.querySelectorAll("#dashboard .show-chooise > div")
 
@@ -25,11 +30,8 @@ let productsDisplaySection = document.querySelector(".display-products")
 let overlay = document.querySelector(".overlay")
 let popupDel = document.querySelector(".popup-delete")
 
-import { AddClassToShow, goUpBTN } from "./utilities/functions.js"
-import { clsData } from "./utilities/classes.js"
-goUpBTN()
 
-let dataFromJson = new clsData("/Database/products.json")
+let dataFromJson = new clsData("./Database/products.json")
 
 categoryBTN.onclick = _ => {
     AddClassToShow(formCategory, "show");

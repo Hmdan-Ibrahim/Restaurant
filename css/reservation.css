@@ -1,0 +1,38 @@
+#Reservation-page {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+#Reservation-page .container {
+    background-color: var(--main-color);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+#Reservation-page form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#Reservation-page form>div {
+    width: calc(50% - 20px);
+}
+
+@media (max-width: 767px) {
+    #Reservation-page form>div {
+        width: 100%;
+    }
+}
+
+#Reservation-page form>div input {
+    width: 100%;
+}
+
+#Reservation-page .btns {
+    flex-basis: 100%;
+}
+
+#Reservation-page .btns button {
+    display: inline;
+}

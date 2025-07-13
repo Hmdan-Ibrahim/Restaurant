@@ -9,7 +9,7 @@ const selectCategory = productsPage.querySelector("#select-category")
 let showServices = productsPage.querySelector(".services")
 
 
-const productsFromDB = new clsData("/Database/products.json")
+const productsFromDB = new clsData("./Database/products.json")
 
 selectCategory.onchange = function() {
     head.innerHTML = this.value
