@@ -31,7 +31,6 @@ export class clsData {
             request.onload = () => {
                 if (request.readyState == 4 & request.status === 200) {
                     this.data = request.response;
-                    console.log(request.response)
                     Resolve(this.data)
                 } else {
                     Reject(new Error("Error loading Data" + this.statusText))
@@ -49,9 +48,7 @@ export class clsData {
         return Object.keys(this.data).sort()
     }
 
-    getProducts(categName) {
-        console.log(this.data);
-        
+    getProducts(categName) { 
         return Object.values(this.data[categName]).filter((ele) => ele.name).sort((a, b) => a.name.localeCompare(b.name))
     }
 
@@ -61,24 +58,18 @@ export class clsData {
 
     addCategory(categoryName) {
         categoryName in this.data ?
-            console.log("This category is Found")
+            alert("This category is Found")
             : this.data[categoryName] = { 'name': categoryName }
     }
 
     addProduct(categoryName, productAdded) {
-        // console.log(productAdded.name)
-
-
         productAdded.name in this.data[categoryName] ?
-            console.log("This product is Found")
+            alert("This product is Found")
             : this.data[categoryName][productAdded.name] = productAdded
-        console.log(productAdded.name)
-        console.log(this.data)
-
     }
 
     updateCategory(oldCategName, newCategName) {
-        if (oldCategName == newCategName) console.log("The old value & new value is the same")
+        if (oldCategName == newCategName) alert("The old value & new value is the same")
 
         else {
             this.data[newCategName] = this.data[oldCategName];
@@ -90,9 +81,7 @@ export class clsData {
     updateProduct(oldCateg, newCateg, oldProduct, newProduct) {
         delete this.data[oldCateg][oldProduct]
         this.data[newCateg][newProduct.name] = newProduct
-        // console.log(this.data)
     }
-
 
     deleteCategory(categoryName) {
         delete this.data[categoryName]

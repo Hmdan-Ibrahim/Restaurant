@@ -1,5 +1,8 @@
 
-import { AddClassToShow, sharedCode, clsData, displayProducts, Discount } from "./functions.js"
+import { AddClassToShow, sharedCode, displayProducts } from "./utilities/functions.js"
+import { clsData } from "./utilities/classes.js"
+import { Discount } from "./utilities/commonVariables.js"
+
 let setIntervalTimer = 6000
 
 let welcomeSection = document.querySelector(".welcome")

@@ -1,4 +1,5 @@
-import { sharedCode, clsData, displayProducts } from "./functions.js"
+import { clsData } from "./utilities/classes.js"
+import { sharedCode, displayProducts } from "./utilities/functions.js"
 
 sharedCode()
 
@@ -8,7 +9,7 @@ const selectCategory = productsPage.querySelector("#select-category")
 let showServices = productsPage.querySelector(".services")
 
 
-const productsFromDB = new clsData("../Database/products.txt")
+const productsFromDB = new clsData("/Database/products.json")
 
 selectCategory.onchange = function() {
     head.innerHTML = this.value

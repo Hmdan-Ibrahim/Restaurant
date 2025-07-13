@@ -1,11 +1,14 @@
-import { sharedCode, clsData, getDiscount, Discount } from "./functions.js"
+import { sharedCode, getDiscount } from "./utilities/functions.js"
+import {clsData} from './utilities/classes.js'
+import { Discount } from "./utilities/commonVariables.js"
+
 const productPage = document.getElementById("Product-page")
 const productDetails = productPage.querySelector(".details")
 
 // Shared code in all Pages
 sharedCode()
 
-let servicesData = new clsData("../Database/products.txt")
+let servicesData = new clsData("/Database/products.json")
 
 const getQueryParams = _ => {
     const params = new URLSearchParams(window.location.search)
@@ -25,7 +28,6 @@ servicesData.loadData().then( _ => {
     const product = servicesData.getProduct(categoryName, productName);
     displayProductDetails(product)
 })
-// productDetails = ''
 
 function displayProductDetails(product){
     const imgDiv = document.createElement("div")

@@ -25,12 +25,11 @@ let productsDisplaySection = document.querySelector(".display-products")
 let overlay = document.querySelector(".overlay")
 let popupDel = document.querySelector(".popup-delete")
 
-import { AddClassToShow, goUpBTN, clsData } from "./functions.js"
+import { AddClassToShow, goUpBTN } from "./utilities/functions.js"
+import { clsData } from "./utilities/classes.js"
 goUpBTN()
 
-// let dataFromJson = new clsData("../Database/products.txt" , await(await fetch("../Database/products.txt")).json())
-let dataFromJson = new clsData("../Database/products.json")
-
+let dataFromJson = new clsData("/Database/products.json")
 
 categoryBTN.onclick = _ => {
     AddClassToShow(formCategory, "show");
@@ -74,38 +73,40 @@ let defaultImg = imgPreview.src
 
 ProductImg.onchange = event => imgPreview.src = URL.createObjectURL(event.target.files[0])
 
-
 addProdBTN.onclick = function (event) {
     event.preventDefault()
     let isInputsCompleted = ProdName.value != '' && ProdPrice.value != '' && ProdDescription.value != ''
     let isImgSelected = imgPreview.src != defaultImg
 
-    if (isInputsCompleted && isImgSelected) {
-        const NewProduct = {
-            'name': ProdName.value.toLowerCase(),
-            "image": imgPreview.src,
-            "price": Number(ProdPrice.value),
-            "description": ProdDescription.value || ""
-        }
-
-        if (this.value.toLowerCase() == "add") {
-            dataFromJson.addProduct(selectCategory.value, NewProduct)
-
-        } else {
-            let oldCateg = selectCategory.dataset.oldCateg
-            let oldProd = ProdName.dataset.oldProd
-
-            dataFromJson.updateProduct(oldCateg, selectCategory.value, oldProd, NewProduct)
-        }
-
-        imgPreview.src = defaultImg
-        selectCategory.removeAttribute(`data-oldCateg`)
-        ProdName.removeAttribute(`data-oldProd`)
-        categoryBTN.innerHTML = "Add Product"
-        this.value = 'Add'
-        ProdName.value = ProdPrice.value = ProdDescription.value = ""
-        displayItems()
+    if (!isInputsCompleted || !isImgSelected) {
+        alert("All fields are requierd")
+        return
     }
+    const NewProduct = {
+        'name': ProdName.value.toLowerCase(),
+        "image": imgPreview.src,
+        "price": Number(ProdPrice.value),
+        "description": ProdDescription.value || ""
+    }
+
+    if (this.value.toLowerCase() == "add") {
+        dataFromJson.addProduct(selectCategory.value, NewProduct)
+
+    } else {
+        let oldCateg = selectCategory.dataset.oldCateg
+        let oldProd = ProdName.dataset.oldProd
+
+        dataFromJson.updateProduct(oldCateg, selectCategory.value, oldProd, NewProduct)
+    }
+
+    imgPreview.src = defaultImg
+    selectCategory.removeAttribute(`data-oldCateg`)
+    ProdName.removeAttribute(`data-oldProd`)
+    categoryBTN.innerHTML = "Add Product"
+    this.value = 'Add'
+    ProdName.value = ProdPrice.value = ProdDescription.value = ""
+    displayItems()
+    
 }
 
 
